@@ -1,4 +1,4 @@
-package entities;
+package Client;
 
 import java.io.IOException;
 import java.io.InputStream;

@@ -1,4 +1,4 @@
-package entities;
+package Server;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ public class Board {
     /**
      * Add a piece to the boardArray
      */
-    public void addPiece() {
-        validatePiece();
+    public void addPiece(Piece piece) {
+        validatePiece(piece);
 
 //        boardArray.add()
     }
@@ -24,7 +24,7 @@ public class Board {
      * of the last piece placed. If no available spots are available,
      * random is ok
      */
-    public void validatePiece() {
+    public void validatePiece(Piece piece) {
 
     }
 

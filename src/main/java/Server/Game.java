@@ -1,4 +1,4 @@
-package entities;
+package Server;
 
 public class Game {
 }

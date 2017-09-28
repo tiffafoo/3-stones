@@ -1,9 +1,9 @@
-package entities;
+package Server;
 
 public class Piece {
     private int column;
     private int row;
-    private int value;
+    private int value; // NOT_OCCUPIED
 
     public Piece(int column, int row, int value) {
         this.column = column;
