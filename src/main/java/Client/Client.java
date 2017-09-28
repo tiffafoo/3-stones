@@ -12,6 +12,9 @@ public class Client
 
     public static void main(String[] args) throws IOException
     {
+        // Create an instance of the server
+        // start the server
+        // Server server = bla
 
         if ((args.length < 2) || (args.length > 3))	// Test for correct # of args
             throw new IllegalArgumentException("Parameter(s): <Server> <Word> [<Port>]");
