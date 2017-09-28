@@ -10,21 +10,22 @@ public class Game {
     /**
      * Add a piece to the boardArray
      */
-    public void addPiece() {
-        validatePiece();
-
-//        innerBoard.add()
+    public void addPiece(int row, int column) {
+        // Client should validate
+      //  if (validatePiece(row, column)) {
+         //   innerBoard.add();
+       // }
     }
 
-    /**
-     * Validate the it follows the rules of
-     * being within one column and row
-     * of the last piece placed. If no available spots are available,
-     * random is ok
-     */
-    public void validatePiece() {
-
-    }
+//    /** Client should validate
+//     * Validate the it follows the rules of
+//     * being within one column and row
+//     * of the last piece placed. If no available spots are available,
+//     * random is ok
+//     */
+//    public boolean validatePiece(int row, int column) {
+//
+//    }
 
     /**
      * Clears the innerBoard and restarts
