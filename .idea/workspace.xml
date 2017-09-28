@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3272b22a-afb6-4afb-b6a2-ef890332c207" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Server/Session.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Server/TSPacket.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Client/Client.java" afterPath="$PROJECT_DIR$/src/main/java/Client/Client.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Server/Game.java" afterPath="$PROJECT_DIR$/src/main/java/Server/Game.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/entities/Player.java" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -18,31 +15,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/entities/Player.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Server.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Server.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Server/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="33" column="41" lean-forward="true" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
+            <state relative-caret-position="124">
+              <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Session.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Session.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Server/Session.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="22" lean-forward="true" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+            <state relative-caret-position="135">
+              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -150,7 +137,6 @@
         <option value="$PROJECT_DIR$/src/main/java/Server/Server.java" />
         <option value="$PROJECT_DIR$/src/main/java/Server/Slot.java" />
         <option value="$PROJECT_DIR$/src/main/java/Server/Piece.java" />
-        <option value="$PROJECT_DIR$/src/main/java/entities/Player.java" />
         <option value="$PROJECT_DIR$/src/main/java/Client/Board.java" />
         <option value="$PROJECT_DIR$/src/main/java/Server/Stone.java" />
         <option value="$PROJECT_DIR$/src/main/java/Server/Board.java" />
@@ -158,6 +144,7 @@
         <option value="$PROJECT_DIR$/src/main/java/Client/Client.java" />
         <option value="$PROJECT_DIR$/src/main/java/Server/Game.java" />
         <option value="$PROJECT_DIR$/src/main/java/Server/Session.java" />
+        <option value="$PROJECT_DIR$/src/main/java/entities/Player.java" />
       </list>
     </option>
   </component>
@@ -230,14 +217,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stones" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stones" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="entities" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="stones" type="b2602c69:ProjectViewProjectNode" />
@@ -413,12 +392,12 @@
       <workItem from="1506012312497" duration="1398000" />
       <workItem from="1506387173634" duration="1869000" />
       <workItem from="1506534014530" duration="320000" />
-      <workItem from="1506537740151" duration="4077000" />
+      <workItem from="1506537740151" duration="4162000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7664000" />
+    <option name="totallyTimeSpent" value="7749000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="20" y="43" width="1400" height="779" extended-state="0" />
@@ -618,14 +597,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entities/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Client/Board.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -666,14 +637,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Server/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="33" column="41" lean-forward="true" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Server/Board.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -700,8 +663,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Server/Session.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entities/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="5" column="22" lean-forward="true" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
           <folding />
         </state>
       </provider>
