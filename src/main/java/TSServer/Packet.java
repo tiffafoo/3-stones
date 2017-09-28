@@ -1,6 +1,6 @@
-package Server;
+package TSServer;
 
-public class TSPacket {
+public class Packet {
     // TODO: sendPacket()
     // TODO: receivePacket()
 }

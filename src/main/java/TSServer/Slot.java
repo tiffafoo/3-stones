@@ -1,4 +1,4 @@
-package Server;
+package TSServer;
 
 /**
  * Four possibilities

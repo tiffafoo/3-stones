@@ -1,4 +1,4 @@
-package Server;
+package TSServer;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -31,7 +31,7 @@ public class Server
         {
             Socket clntSock = servSock.accept();	// Get client connection
 
-            // TODO: Server.playSessions;
+            // TODO: TSServer.playSessions;
 
             System.out.println("Handling client at " +
                     clntSock.getInetAddress().getHostAddress() + " on port " +

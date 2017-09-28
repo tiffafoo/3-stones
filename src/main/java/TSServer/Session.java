@@ -1,4 +1,4 @@
-package Server;
+package TSServer;
 
 public class Session {
     // playSession(Socket s)

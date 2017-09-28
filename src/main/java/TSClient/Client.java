@@ -1,4 +1,4 @@
-package Client;
+package TSClient;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,12 +14,12 @@ public class Client
     {
         // Create an instance of the server
         // start the server
-        // Server server = bla
+        // TSServer server = bla
 
         if ((args.length < 2) || (args.length > 3))	// Test for correct # of args
-            throw new IllegalArgumentException("Parameter(s): <Server> <Word> [<Port>]");
+            throw new IllegalArgumentException("Parameter(s): <TSServer> <Word> [<Port>]");
 
-        String server = args[0];					// Server name or IP address
+        String server = args[0];					// TSServer name or IP address
         // Convert input String to bytes using the default character encoding
         byte[] byteBuffer = args[1].getBytes();
 

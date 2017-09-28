@@ -1,10 +1,11 @@
-package Server;
+package TSServer;
 
 public class Game {
     private boolean playerTurn; // ?
     private int piecesPlayed = 0; // max 30 game stops
     private int lastColumn = -1;
     private int lastRow = -1;
+    private InnerBoard innerBoard;
 
     /**
      * Add a piece to the boardArray
@@ -12,7 +13,7 @@ public class Game {
     public void addPiece() {
         validatePiece();
 
-//        boardArray.add()
+//        innerBoard.add()
     }
 
     /**
@@ -26,14 +27,14 @@ public class Game {
     }
 
     /**
-     * Clears the board and restarts
+     * Clears the innerBoard and restarts
      */
     public void endGame() {
 
     }
 
     /**
-     * Checks the board with the new added piece
+     * Checks the innerBoard with the new added piece
      */
     public void calculatePoints() {
 
