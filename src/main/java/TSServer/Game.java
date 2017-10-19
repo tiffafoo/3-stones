@@ -2,30 +2,30 @@ package TSServer;
 
 import org.slf4j.LoggerFactory;
 
-import java.util.logging.Logger;
-
 public class Game {
     private boolean playerTurn; // ?
     private int piecesPlayed = 0; // max 30 game stops
     private int lastColumn = -1;
     private int lastRow = -1;
-    private Slot[][] innerBoard;
+    private InnerBoard innerBoard;
+    private Slot[][] gameBoard;
     private final org.slf4j.Logger log = LoggerFactory.getLogger(this.getClass().getName());
 
     /**
      * Constructor
      */
     public Game() {
-        innerBoard = new InnerBoard().getBoardArray();
+        innerBoard = new InnerBoard();
+        gameBoard = innerBoard.getBoardArray();
     }
 
     /**
      * Add a piece to the boardArray
      */
-    public void addPiece(int row, int column) {
+    public void addPiece(int row, int column, Slot cellState) {
         log.debug("Attempting to adding piece: row ->" + row + " column->" + column);
         if (validatePiece(row, column, lastRow, lastColumn)) {
-            addPiece(row, column);
+            innerBoard.add(row, column, cellState);
         }
     }
 
@@ -46,34 +46,75 @@ public class Game {
         log.debug("Validating piece: row-> " + row + " column-> " + column + "\nlastRow-> " + lastRow + " lastColumn->" + lastColumn);
 
         // Slot is empty and either the row or column is the same
-        if (innerBoard[row][column] == Slot.NOT_OCCUPIED && (row == lastRow || column == lastColumn)) {
+        if (gameBoard[row][column] == Slot.NOT_OCCUPIED && (row == lastRow || column == lastColumn)) {
             return true;
         } else {
             // Checks if there is a free adjacent cell that the player
             // Could have placed his piece in. If not, the move is valid.
-            for (int i = 0; i < innerBoard.length; i++) {
-                if (innerBoard[lastRow][i] == Slot.NOT_OCCUPIED || innerBoard[i][lastColumn] == Slot.NOT_OCCUPIED) {
-                    return false;
-                }
+            if (gameBoard[row + 1][column] == Slot.NOT_OCCUPIED || gameBoard[row - 1][column] == Slot.NOT_OCCUPIED
+                    || gameBoard[row][column + 1] == Slot.NOT_OCCUPIED || gameBoard[row][column + 1] == Slot.NOT_OCCUPIED
+                    || gameBoard[row][column + 1] == Slot.NOT_OCCUPIED || gameBoard[row - 1][column] == Slot.NOT_OCCUPIED) {
+                return false;
             }
+
             return true;
         }
     }
 
     /**
-     * Clears the innerBoard and restarts
+     * Clears the gameBoard and restarts
      */
     public void endGame() {
 
     }
 
     /**
-     * Checks the innerBoard with the new added piece
+     * Checks the gameBoard with the new added piece.
+     *
+     * 1 point = 3 adjacent same colored pieces
+     *
      */
-    public void calculatePoints() {
+    public int calculatePoints(int row, int column, Slot cellState) {
+        log.debug("Calculating points...");
+        int scoreCounter = 0;
 
+        for (int i = 0; i <=2; i++) {
+            // Check each row, if full +1 point each
+            if (gameBoard[row + i][column] == cellState && gameBoard[row - i][column] == cellState) {
+                scoreCounter++;
+            }
+            // Check each column, if full +1 point each
+            if (gameBoard[row][column + i] == cellState && gameBoard[row][column + i] == cellState) {
+                scoreCounter++;
+            }
+            // Check each diagonal, if full +1 point each
+            if (gameBoard[row][column + i] == cellState && gameBoard[row - i][column] == cellState) {
+                scoreCounter++;
+            }
+        }
+
+        return scoreCounter;
     }
 
+    /**
+     * Find the next move for the computer
+     * WIP
+     */
+    public void getNextMove(int lastUserRow, int lastUserColumn, Slot cellState) {
+        int scoreHolder = 0;
+        int calculatedHolder = 0;
+        int bestRowHolder = -1;
+        int bestColumnHolder = -1;
+
+        if (validatePiece(lastUserRow + 1, lastUserColumn, lastRow, lastColumn)) {
+            bestRowHolder = lastUserRow + 1;
+            bestColumnHolder = lastUserColumn;
+            calculatedHolder = calculatePoints(bestRowHolder,bestColumnHolder, cellState);
+            if (calculatedHolder > scoreHolder) {
+                scoreHolder = calculatedHolder;
+            }
+        }
+    }
     // TODO: NextMove etc.
 
     /**
