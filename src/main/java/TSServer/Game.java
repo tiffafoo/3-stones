@@ -51,12 +51,12 @@ public class Game {
         } else {
             // Checks if there is a free adjacent cell that the player
             // Could have placed his piece in. If not, the move is valid.
-            if (gameBoard[row + 1][column] == Slot.NOT_OCCUPIED || gameBoard[row - 1][column] == Slot.NOT_OCCUPIED
-                    || gameBoard[row][column + 1] == Slot.NOT_OCCUPIED || gameBoard[row][column + 1] == Slot.NOT_OCCUPIED
-                    || gameBoard[row][column + 1] == Slot.NOT_OCCUPIED || gameBoard[row - 1][column] == Slot.NOT_OCCUPIED) {
-                return false;
+            for (int i = 0; i < gameBoard.length; i++) {
+                if (gameBoard[lastRow][i] == Slot.NOT_OCCUPIED || gameBoard[i][lastColumn] == Slot.NOT_OCCUPIED) {
+                    return false;
+                }
             }
-
+            // User's move was valid because no space around last played piece
             return true;
         }
     }
@@ -100,15 +100,15 @@ public class Game {
      * Find the next move for the computer
      * WIP
      */
-    public void getNextMove(int lastUserRow, int lastUserColumn, Slot cellState) {
+    public void getNextMove(int lastRow, int lastColumn, Slot cellState) {
         int scoreHolder = 0;
         int calculatedHolder = 0;
         int bestRowHolder = -1;
         int bestColumnHolder = -1;
 
-        if (validatePiece(lastUserRow + 1, lastUserColumn, lastRow, lastColumn)) {
-            bestRowHolder = lastUserRow + 1;
-            bestColumnHolder = lastUserColumn;
+        if (validatePiece(lastRow + 1, lastColumn, lastRow, lastColumn)) {
+            bestRowHolder = lastRow + 1;
+            bestColumnHolder = lastColumn;
             calculatedHolder = calculatePoints(bestRowHolder,bestColumnHolder, cellState);
             if (calculatedHolder > scoreHolder) {
                 scoreHolder = calculatedHolder;
