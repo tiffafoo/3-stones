@@ -1,13 +1,7 @@
 package TSServer;
 
-import java.util.List;
-
 public class InnerBoard {
     private Slot[][] boardArray; // 11 x 11 with [-1, 0, 1, 2] or strings
-
-    public void add(int row, int column, Slot value) {
-        boardArray[row][column] = value;
-    }
 
     // Initializes the board
     public InnerBoard() {
@@ -44,4 +38,13 @@ public class InnerBoard {
             }
         }
     }
+
+    public Slot[][] getBoardArray() {
+        return boardArray;
+    }
+
+    public void add(int row, int column, Slot value) {
+        boardArray[row][column] = value;
+    }
+
 }
