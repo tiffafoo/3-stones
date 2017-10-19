@@ -74,23 +74,53 @@ public class Game {
      * 1 point = 3 adjacent same colored pieces
      *
      */
-    public int calculatePoints(int row, int column, Slot cellState) {
+    public int calculatePoints(int lastRow, int lastColumn, Slot cellState) {
         log.debug("Calculating points...");
         int scoreCounter = 0;
 
-        for (int i = 0; i <=2; i++) {
-            // Check each row, if full +1 point each
-            if (gameBoard[row + i][column] == cellState && gameBoard[row - i][column] == cellState) {
-                scoreCounter++;
-            }
-            // Check each column, if full +1 point each
-            if (gameBoard[row][column + i] == cellState && gameBoard[row][column + i] == cellState) {
-                scoreCounter++;
-            }
-            // Check each diagonal, if full +1 point each
-            if (gameBoard[row][column + i] == cellState && gameBoard[row - i][column] == cellState) {
-                scoreCounter++;
-            }
+        // Check each lastRow, if full +1 point each
+        if (gameBoard[lastRow + 1][lastColumn] == cellState && gameBoard[lastRow - 1][lastColumn] == cellState) {
+            scoreCounter++;
+        }
+        // Check each lastColumn, if full +1 point each
+        if (gameBoard[lastRow][lastColumn + 1] == cellState && gameBoard[lastRow][lastColumn + 1] == cellState) {
+            scoreCounter++;
+        }
+        // Check first diagonal, if full +1 point each
+        if (gameBoard[lastRow + 1][lastColumn - 1] == cellState && gameBoard[lastRow - 1][lastColumn + 1] == cellState) {
+            scoreCounter++;
+        }
+
+        // Check second diagonal
+        if (gameBoard[lastRow - 1][lastColumn - 1] == cellState && gameBoard[lastRow + 1][lastColumn + 1] == cellState) {
+            scoreCounter++;
+        }
+
+        // Check at 2nd other thingy left and right
+        if (gameBoard[lastRow + 1][lastColumn] == cellState && gameBoard[lastRow + 2][lastColumn] == cellState) {
+            scoreCounter++;
+        }
+
+        if (gameBoard[lastRow - 1][lastColumn] == cellState && gameBoard[lastRow - 2][lastColumn] == cellState) {
+            scoreCounter++;
+        }
+
+        // Check 2nd top and bottom
+        if (gameBoard[lastRow + 1][lastColumn + 1] == cellState && gameBoard[lastRow + 2][lastColumn + 2] == cellState) {
+            scoreCounter++;
+        }
+
+        if (gameBoard[lastRow - 1][lastColumn - 1] == cellState && gameBoard[lastRow - 2][lastColumn - 2] == cellState) {
+            scoreCounter++;
+        }
+        
+        // Check 2nd diagonal
+        if (gameBoard[lastRow + 1][lastColumn -1] == cellState && gameBoard[lastRow + 2][lastColumn - 2] == cellState) {
+            scoreCounter++;
+        }
+
+        if (gameBoard[lastRow - 1][lastColumn + 1] == cellState && gameBoard[lastRow - 2][lastColumn + 2] == cellState) {
+            scoreCounter++;
         }
 
         return scoreCounter;
