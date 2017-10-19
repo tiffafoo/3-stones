@@ -3,12 +3,13 @@ package TSServer;
 import org.slf4j.LoggerFactory;
 
 public class Game {
-    private boolean playerTurn; // ?
     private int piecesPlayed = 0; // max 30 game stops
     private int lastColumn = -1;
     private int lastRow = -1;
     private InnerBoard innerBoard;
     private Slot[][] gameBoard;
+    private int playerPoints = 0;
+    private int compPoints = 0;
     private final org.slf4j.Logger log = LoggerFactory.getLogger(this.getClass().getName());
 
     /**
@@ -23,9 +24,21 @@ public class Game {
      * Add a piece to the boardArray
      */
     public void addPiece(int row, int column, Slot cellState) {
+        // Either while loop or check with other side
         log.debug("Attempting to adding piece: row ->" + row + " column->" + column);
+
+        // validate, calculate points and add to globals
         if (validatePiece(row, column, lastRow, lastColumn)) {
             innerBoard.add(row, column, cellState);
+            lastColumn = column;
+            lastRow = row;
+            if (cellState == Slot.COMPUTER_MOVE) {
+                compPoints += calculatePoints(row, column, cellState);
+            } else {
+                playerPoints += calculatePoints(row, column, cellState);
+            }
+        } else {
+            // throw or something
         }
     }
 
@@ -113,7 +126,7 @@ public class Game {
         if (gameBoard[lastRow - 1][lastColumn - 1] == cellState && gameBoard[lastRow - 2][lastColumn - 2] == cellState) {
             scoreCounter++;
         }
-        
+
         // Check 2nd diagonal
         if (gameBoard[lastRow + 1][lastColumn -1] == cellState && gameBoard[lastRow + 2][lastColumn - 2] == cellState) {
             scoreCounter++;
