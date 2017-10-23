@@ -9,6 +9,13 @@ A. Simonelis
 
 ==Docs: Oct 27, 2017== (week after)
 
+## Game Overview
+The object of the game is to score points by getting stones of your color into three pockets in a row, be it across, up and down, or diagonally. There are black and white stones for the players and clear stones that count for both players.
+
+The game can be played with an element of luck, drawing stones from a bag, or as pure skill with each player taking equal amounts of the colored stones. Timed tournament play and handicapping is also an option.
+
+## Project Specs
+
 You will work in assigned groups. Each group will demonstrate its work, as specified by your instructor. All group members must be present at the demonstration. All members of a group are expected to contribute more or less equally to the project, and to be familiar with all of the work of the project.
 
 Each team will write a client-server TCP-based system in Java that will allow a person using the client to play game(s) of 3 Stones with the computer server.
@@ -55,8 +62,3 @@ Final documentation (per team) will consist of:
 2. the class association diagram
 3. source listings of the client program and the server program, both of which are to include good explanatory comments; on the day that you submit your documentation, you must also email your source code to your instructor
 4. all of the above in an appropriate binder.
-
-## 3 Stones Game Description
-he object of the game is to score points by getting stones of your color into three pockets in a row, be it across, up and down, or diagonally. There are black and white stones for the players and clear stones that count for both players.
-
-The game can be played with an element of luck, drawing stones from a bag, or as pure skill with each player taking equal amounts of the colored stones. Timed tournament play and handicapping is also an option.
