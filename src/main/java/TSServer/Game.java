@@ -32,6 +32,7 @@ public class Game {
             innerBoard.add(row, column, cellState);
             lastColumn = column;
             lastRow = row;
+            piecesPlayed++;
             if (cellState == Slot.COMPUTER_MOVE) {
                 compPoints += calculatePoints(row, column, cellState);
             } else {
@@ -72,13 +73,6 @@ public class Game {
             // User's move was valid because no space around last played piece
             return true;
         }
-    }
-
-    /**
-     * Clears the gameBoard and restarts
-     */
-    public void endGame() {
-
     }
 
     /**
@@ -158,19 +152,4 @@ public class Game {
             }
         }
     }
-    // TODO: NextMove etc.
-
-    /**
-     * playSession(... s) {
-     *  loop on (play Again) {
-     *      loop on (!gameOver) or playGame
-     *      -- depends on where we place this session
-     *  }
-     * }
-     */
-
-    // Here the stone and slot enum can be placed
-
-    // TODO: determineNextMove()
-    // TODO: countScoreForMove(x,y)
 }
