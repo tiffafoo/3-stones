@@ -22,6 +22,9 @@ public class Game {
 
     /**
      * Add a piece to the boardArray
+     * @param row
+     * @param column
+     * @param cellState
      */
     public void addPiece(int row, int column, Slot cellState) {
         // Either while loop or check with other side
@@ -80,6 +83,10 @@ public class Game {
      *
      * 1 point = 3 adjacent same colored pieces
      *
+     * @param lastRow
+     * @param lastColumn
+     * @param cellState
+     * @return 
      */
     public int calculatePoints(int lastRow, int lastColumn, Slot cellState) {
         log.debug("Calculating points...");
@@ -136,20 +143,50 @@ public class Game {
     /**
      * Find the next move for the computer
      * WIP
+     * @param lastRow
+     * @param lastColumn
      */
-    public void getNextMove(int lastRow, int lastColumn, Slot cellState) {
+    public void getNextMove() 
+    {
         int scoreHolder = 0;
-        int calculatedHolder = 0;
+        int calculatedHolder = -1;
         int bestRowHolder = -1;
         int bestColumnHolder = -1;
+        Slot cellState = Slot.COMPUTER_MOVE;
 
-        if (validatePiece(lastRow + 1, lastColumn, lastRow, lastColumn)) {
-            bestRowHolder = lastRow + 1;
-            bestColumnHolder = lastColumn;
-            calculatedHolder = calculatePoints(bestRowHolder,bestColumnHolder, cellState);
-            if (calculatedHolder > scoreHolder) {
-                scoreHolder = calculatedHolder;
+        for(int i = 0; i < gameBoard.length; i++)
+        {
+            if (validatePiece(i, lastColumn, lastRow, lastColumn)) 
+            {
+                calculatedHolder = calculatePoints(bestRowHolder,bestColumnHolder, cellState);
+                if (calculatedHolder > scoreHolder) 
+                {
+                    scoreHolder = calculatedHolder;
+                    bestRowHolder = lastRow + 1;
+                    bestColumnHolder = lastColumn;
+                }
             }
+            
+            if (validatePiece(lastRow, i, lastRow, lastColumn)) 
+            {
+                calculatedHolder = calculatePoints(bestRowHolder,bestColumnHolder, cellState);
+                if (calculatedHolder > scoreHolder) 
+                {
+                    scoreHolder = calculatedHolder;
+                    bestRowHolder = lastRow + 1;
+                    bestColumnHolder = lastColumn;
+                }
+            }
+            
         }
+        if(bestRowHolder != -1)
+            addPiece(bestRowHolder, bestColumnHolder, cellState);
+        else
+            getRandomSpot();
+    }
+    
+    public void getRandomSpot()
+    {
+    
     }
 }
