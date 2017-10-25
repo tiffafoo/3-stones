@@ -1,4 +1,6 @@
-package TSServer;
+package TSServer.game;
+
+import TSServer.game.Slot;
 
 public class InnerBoard {
     private Slot[][] boardArray; // 11 x 11 with [-1, 0, 1, 2] or strings

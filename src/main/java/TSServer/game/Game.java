@@ -1,4 +1,4 @@
-package TSServer;
+package TSServer.game;
 
 import org.slf4j.LoggerFactory;
 
@@ -143,8 +143,6 @@ public class Game {
     /**
      * Find the next move for the computer
      * WIP
-     * @param lastRow
-     * @param lastColumn
      */
     public void getNextMove() 
     {
