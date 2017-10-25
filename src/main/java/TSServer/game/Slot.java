@@ -1,4 +1,4 @@
-package TSServer;
+package TSServer.game;
 
 /**
  * Four possibilities
