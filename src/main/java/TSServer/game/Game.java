@@ -1,5 +1,6 @@
 package TSServer.game;
 
+import java.util.Random;
 import org.slf4j.LoggerFactory;
 
 public class Game {
@@ -180,11 +181,26 @@ public class Game {
         if(bestRowHolder != -1)
             addPiece(bestRowHolder, bestColumnHolder, cellState);
         else
-            getRandomSpot();
+            getRandomSpot(cellState);
     }
     
-    public void getRandomSpot()
+    public void getRandomSpot(Slot cellState)
     {
-    
+        //Get a random number generator
+        Random randomSpace = new Random();    
+        //Make 2 variables to hold the random numbers. I set them to 0 because
+        //at position [0,0] the space should always be FORBIDDEN_SPACE.                
+        int rdmRowHolder = 0, rdmColumnHolder = 0;        
+        
+        //Kepp finding a random spot until it is valid. Will only exit the loop when
+        //The piece is valid.
+        while(!validatePiece(rdmRowHolder, rdmColumnHolder, lastRow, lastColumn))
+        {
+            //Gets a random space between 0 and 6 (7X7 game board), which will then be validated
+            rdmRowHolder = randomSpace.nextInt(6);
+            rdmColumnHolder = randomSpace.nextInt(6);
+        }
+        //Will only arrive here if the random piece is valid, so add to board!
+        addPiece(rdmRowHolder, rdmColumnHolder, cellState);        
     }
 }
