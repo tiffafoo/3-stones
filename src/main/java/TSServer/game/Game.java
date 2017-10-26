@@ -179,7 +179,10 @@ public class Game {
             
         }
         if(bestRowHolder != -1)
+        {
+            log.debug("Best Row: " + bestRowHolder + " Best Column: " + bestColumnHolder);
             addPiece(bestRowHolder, bestColumnHolder, cellState);
+        }
         else
             getRandomSpot(cellState);
     }
@@ -201,6 +204,7 @@ public class Game {
             rdmColumnHolder = randomSpace.nextInt(6);
         }
         //Will only arrive here if the random piece is valid, so add to board!
+        log.debug("Random Row: " + rdmRowHolder + " Random Column: " + rdmColumnHolder);
         addPiece(rdmRowHolder, rdmColumnHolder, cellState);        
     }
 }

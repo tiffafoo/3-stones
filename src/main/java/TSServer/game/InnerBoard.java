@@ -1,7 +1,5 @@
 package TSServer.game;
 
-import TSServer.game.Slot;
-
 public class InnerBoard {
     private Slot[][] boardArray; // 11 x 11 with [-1, 0, 1, 2] or strings
 
@@ -14,8 +12,8 @@ public class InnerBoard {
         fillSlots(9, 11, 0, 11, Slot.FORBIDDEN_SPACE);
 
         // Column 2
-        fillSlots(2,3, 0, 3, Slot.FORBIDDEN_SPACE);
-        fillSlots(2, 3, 3, 7, Slot.NOT_OCCUPIED);
+        fillSlots(2, 3, 0, 4, Slot.FORBIDDEN_SPACE);
+        fillSlots(2, 3, 4, 7, Slot.NOT_OCCUPIED);
         fillSlots(2, 3, 7, 11, Slot.FORBIDDEN_SPACE);
 
         // Column 3
@@ -36,8 +34,8 @@ public class InnerBoard {
         fillSlots(7, 8, 8, 11, Slot.FORBIDDEN_SPACE);
 
         // Column 8
-        fillSlots(8,9, 0, 3, Slot.FORBIDDEN_SPACE);
-        fillSlots(8, 9, 3, 7, Slot.NOT_OCCUPIED);
+        fillSlots(8, 9, 0, 4, Slot.FORBIDDEN_SPACE);
+        fillSlots(8, 9, 4, 7, Slot.NOT_OCCUPIED);
         fillSlots(8, 9, 7, 11, Slot.FORBIDDEN_SPACE);
 
         // Middle empty forbidden
@@ -69,5 +67,4 @@ public class InnerBoard {
     public void add(int row, int column, Slot value) {
         boardArray[row][column] = value;
     }
-
 }
