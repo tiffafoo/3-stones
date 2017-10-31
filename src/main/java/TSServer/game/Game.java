@@ -195,7 +195,7 @@ public class Game {
         //at position [0,0] the space should always be FORBIDDEN_SPACE.                
         int rdmRowHolder = 0, rdmColumnHolder = 0;        
         
-        //Kepp finding a random spot until it is valid. Will only exit the loop when
+        //Keep finding a random spot until it is valid. Will only exit the loop when
         //The piece is valid.
         while(!validatePiece(rdmRowHolder, rdmColumnHolder, lastRow, lastColumn))
         {
