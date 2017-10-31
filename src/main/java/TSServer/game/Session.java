@@ -5,11 +5,9 @@ import java.util.Scanner;
 public class Session
 {
     private Scanner keyBoard;
-    private Game tsGame;
     
     public Session()
-    {
-        tsGame = new Game();
+    {        
     }
     
     public void playSession()
@@ -26,7 +24,10 @@ public class Session
 
             //If they chose yes, start a new game, otherwise, exit the loop.
             if(userChoice.equalsIgnoreCase("y"))
+            {
+                Game tsGame = new Game();
                 tsGame.startGame();
+            }
             else
                 playAgain = false;
         }        
