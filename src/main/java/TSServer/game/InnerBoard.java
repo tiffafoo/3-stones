@@ -1,13 +1,21 @@
 package TSServer.game;
 
-public class InnerBoard 
-{
-    //set size of array
-    private Slot[][] boardArray = new Slot[11][11]; // 11 x 11 with [-1, 0, 1, 2] or strings
+/**
+ * Class responsible for creating and filling the 11X11 array which will be keeping
+ * track of all the moves the computer and play make. Used to simplify the calculation 
+ * of moves and points.
+ * 
+ * @author Tiffany Le-Nguyen
+ * @author Trevor Eames
+ * @author Alessandro Ciotola
+ * 
+ */
+public class InnerBoard{
+    //Set the size of the array
+    private Slot[][] boardArray = new Slot[11][11];
 
     // Initializes the board
-    public InnerBoard() 
-    {        
+    public InnerBoard(){        
         // First two columns (0, 1)
         fillSlots(0, 2, 0, 11, Slot.FORBIDDEN_SPACE);
 
@@ -43,12 +51,12 @@ public class InnerBoard
 
         // Middle empty forbidden
         boardArray[5][5] = Slot.FORBIDDEN_SPACE;
-
     }
 
     /**
      * Fills slots of the boardArray with
      * a slot value from a given start and end position
+     * 
      * @param xStart (inclusive)
      * @param xEnd (non-inclusive)
      * @param yStart (inclusive)
@@ -63,10 +71,22 @@ public class InnerBoard
         }
     }
 
+    /**
+     * Method which returns the boardArray
+     * 
+     * @return 
+     */
     public Slot[][] getBoardArray() {
         return boardArray;
     }
 
+    /**
+     * Method which will add the value to the selected position in the board array.
+     * 
+     * @param row
+     * @param column
+     * @param value 
+     */
     public void add(int row, int column, Slot value) {
         boardArray[row][column] = value;
     }
