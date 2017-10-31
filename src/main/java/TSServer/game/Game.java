@@ -207,4 +207,9 @@ public class Game {
         log.debug("Random Row: " + rdmRowHolder + " Random Column: " + rdmColumnHolder);
         addPiece(rdmRowHolder, rdmColumnHolder, cellState);        
     }
+    
+    public void startGame()
+    {
+    
+    }
 }
