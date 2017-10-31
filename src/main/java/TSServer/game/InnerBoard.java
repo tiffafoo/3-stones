@@ -1,10 +1,13 @@
 package TSServer.game;
 
-public class InnerBoard {
-    private Slot[][] boardArray; // 11 x 11 with [-1, 0, 1, 2] or strings
+public class InnerBoard 
+{
+    //set size of array
+    private Slot[][] boardArray = new Slot[11][11]; // 11 x 11 with [-1, 0, 1, 2] or strings
 
     // Initializes the board
-    public InnerBoard() {
+    public InnerBoard() 
+    {        
         // First two columns (0, 1)
         fillSlots(0, 2, 0, 11, Slot.FORBIDDEN_SPACE);
 

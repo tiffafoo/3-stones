@@ -1,22 +1,30 @@
 package TSServer.game;
 
+import TSClient.Board;
 import java.util.Random;
+import java.util.Scanner;
 import org.slf4j.LoggerFactory;
 
-public class Game {
+public class Game 
+{
+    private final org.slf4j.Logger log = LoggerFactory.getLogger(this.getClass().getName());
     private int piecesPlayed = 0; // max 30 game stops
     private int lastColumn = -1;
     private int lastRow = -1;
+    private Board clientBoard;
     private InnerBoard innerBoard;
     private Slot[][] gameBoard;
     private int playerPoints = 0;
     private int compPoints = 0;
-    private final org.slf4j.Logger log = LoggerFactory.getLogger(this.getClass().getName());
+    private Scanner keyBoard = new Scanner(System.in);    
 
     /**
      * Constructor
      */
-    public Game() {
+    public Game() 
+    {
+        log.debug("Game Constructor");
+        clientBoard = new Board();
         innerBoard = new InnerBoard();
         gameBoard = innerBoard.getBoardArray();
     }
@@ -32,18 +40,37 @@ public class Game {
         log.debug("Attempting to adding piece: row ->" + row + " column->" + column);
 
         // validate, calculate points and add to globals
-        if (validatePiece(row, column, lastRow, lastColumn)) {
+        log.debug(cellState.name());
+        if (validatePiece(row, column, lastRow, lastColumn)) 
+        {
             innerBoard.add(row, column, cellState);
+            //Add piece to the client board
+            clientBoard.changeBoardPiece(row - 2, column - 2, cellState);
             lastColumn = column;
             lastRow = row;
             piecesPlayed++;
-            if (cellState == Slot.COMPUTER_MOVE) {
+            
+            if (cellState == Slot.COMPUTER_MOVE) 
+            {
                 compPoints += calculatePoints(row, column, cellState);
-            } else {
+            } 
+            else 
+            {
                 playerPoints += calculatePoints(row, column, cellState);
             }
-        } else {
-            // throw or something
+            
+            clientBoard.showClientBoard();
+        } 
+        else 
+        {
+           // Computer will constantly look for a new piece until it's valid,
+           // so if you are here, then the human made an invalid move, so 
+           // let them try again.
+           if(cellState == Slot.HUMAN_MOVE)
+           {
+                System.out.println("Invalid move, please try again!");
+                getPlayerMove();
+           }
         }
     }
 
@@ -60,23 +87,37 @@ public class Game {
      *
      * @return true if valid, false if not
      */
-    public boolean validatePiece(int row, int column, int lastRow, int lastColumn) {
+    public boolean validatePiece(int row, int column, int lastRow, int lastColumn) 
+    {
         log.debug("Validating piece: row-> " + row + " column-> " + column + "\nlastRow-> " + lastRow + " lastColumn->" + lastColumn);
-
-        // Slot is empty and either the row or column is the same
-        if (gameBoard[row][column] == Slot.NOT_OCCUPIED && (row == lastRow || column == lastColumn)) {
+        log.debug(gameBoard[row][column].name());
+        
+        //Check if the it is the first move, check if the user placed it in the right spot.
+        if(piecesPlayed == 0 && gameBoard[row][column] == Slot.NOT_OCCUPIED)
             return true;
-        } else {
-            // Checks if there is a free adjacent cell that the player
-            // Could have placed his piece in. If not, the move is valid.
-            for (int i = 0; i < gameBoard.length; i++) {
-                if (gameBoard[lastRow][i] == Slot.NOT_OCCUPIED || gameBoard[i][lastColumn] == Slot.NOT_OCCUPIED) {
-                    return false;
+        if(piecesPlayed != 0)
+        {
+            // Slot is empty and either the row or column is the same
+            if (gameBoard[row][column] == Slot.NOT_OCCUPIED && (row == lastRow || column == lastColumn)) 
+            {
+                return true;
+            } 
+            else 
+            {
+                // Checks if there is a free adjacent cell that the player
+                // Could have placed his piece in. If not, the move is valid.
+                for (int i = 0; i < gameBoard.length; i++)
+                {
+                    if (gameBoard[lastRow][i] == Slot.NOT_OCCUPIED || gameBoard[i][lastColumn] == Slot.NOT_OCCUPIED) 
+                    {
+                        return false;
+                    }
                 }
+                // User's move was valid because no space around last played piece
+                return true;
             }
-            // User's move was valid because no space around last played piece
-            return true;
         }
+        return false;
     }
 
     /**
@@ -208,8 +249,35 @@ public class Game {
         addPiece(rdmRowHolder, rdmColumnHolder, cellState);        
     }
     
+    //Method to start the game.
+    //Probably will be called when both the server and client are ready to play
     public void startGame()
     {
+        log.debug("Game Start");
+        System.out.println("Welcome, here is the game board: \n");
+        //Uses the client 7x7 board to display results
+        clientBoard.showClientBoard();
+        System.out.println("Players turn!\n");
+        //Get the player row and column choicce
+        getPlayerMove();
+        
+        //Computers turn!!!      
+        //Rest of game
+    }
     
+    //Ask the user to enter a row and oclumn and check if it is valid.
+    private void getPlayerMove()
+    {
+        int row = 0, col = 0;
+        System.out.println("Please select a row: ");
+        while(!keyBoard.hasNextInt())
+            keyBoard.next();        
+        row = keyBoard.nextInt();
+        System.out.println("Please select a column: ");
+        while(!keyBoard.hasNextInt())
+            keyBoard.next();        
+        col = keyBoard.nextInt();
+        
+        addPiece(row + 2, col + 2, Slot.HUMAN_MOVE);         
     }
 }

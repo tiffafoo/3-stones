@@ -1,5 +1,6 @@
 package TSClient;
 
+import TSServer.game.Session;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -10,8 +11,14 @@ import java.net.SocketException;
 public class Client
 {
 
+    //Commented out to test the playSession
     public static void main(String[] args) throws IOException
     {
+        Session session = new Session();
+        session.playSession();
+        
+        /*
+        
         // Create an instance of the server
         // start the server
         // TSServer server = bla
@@ -47,6 +54,6 @@ public class Client
 
         System.out.println("Received: " + new String(byteBuffer));
 
-        socket.close();								// Close the socket and its streams
+        socket.close();	*/							// Close the socket and its streams
     }
 }

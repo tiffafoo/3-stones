@@ -1,0 +1,161 @@
+[DEBUG] 2017-10-31 11:50:37.245 [main] Session - Player says yes
+[DEBUG] 2017-10-31 11:51:39.734 [main] Session - Player says yes
+[DEBUG] 2017-10-31 11:52:34.102 [main] Session - Player says yes
+[DEBUG] 2017-10-31 11:52:34.106 [main] Game - Game Constructor
+[DEBUG] 2017-10-31 11:53:01.106 [main] Session - Player says yes
+[DEBUG] 2017-10-31 11:53:01.110 [main] Game - Game Constructor
+[DEBUG] 2017-10-31 11:54:50.803 [main] Session - Player says yes
+[DEBUG] 2017-10-31 11:54:50.807 [main] Game - Game Constructor
+[DEBUG] 2017-10-31 11:54:50.811 [main] Session - Game created
+[DEBUG] 2017-10-31 11:54:50.811 [main] Game - Game Start
+[DEBUG] 2017-10-31 11:55:47.388 [main] Session - Player says yes
+[DEBUG] 2017-10-31 11:55:47.392 [main] Game - Game Constructor
+[DEBUG] 2017-10-31 11:55:47.396 [main] Session - Game created
+[DEBUG] 2017-10-31 11:55:47.396 [main] Game - Game Start
+[DEBUG] 2017-10-31 11:56:48.106 [main] Session - Inside While
+[DEBUG] 2017-10-31 11:56:48.110 [main] Session - Player says yes
+[DEBUG] 2017-10-31 11:56:48.110 [main] Game - Game Constructor
+[DEBUG] 2017-10-31 11:56:48.110 [main] Session - Game created
+[DEBUG] 2017-10-31 11:56:48.110 [main] Game - Game Start
+[DEBUG] 2017-10-31 11:57:37.881 [main] Session - Inside While
+[DEBUG] 2017-10-31 11:57:37.881 [main] Session - Player says yes
+[DEBUG] 2017-10-31 11:57:37.885 [main] Game - Game Constructor
+[DEBUG] 2017-10-31 11:57:37.885 [main] Session - Game created
+[DEBUG] 2017-10-31 11:57:37.885 [main] Game - Game Start
+[DEBUG] 2017-10-31 12:00:03.829 [main] Session - Inside While
+[DEBUG] 2017-10-31 12:00:03.829 [main] Session - Player says yes
+[DEBUG] 2017-10-31 12:00:03.829 [main] Game - Game Constructor
+[DEBUG] 2017-10-31 12:00:03.845 [main] Session - Game created
+[DEBUG] 2017-10-31 12:00:03.845 [main] Game - Game Start
+[DEBUG] 2017-10-31 12:02:35.958 [main] Session - Player says yes
+[DEBUG] 2017-10-31 12:02:35.958 [main] Game - Game Constructor
+[DEBUG] 2017-10-31 12:02:35.958 [main] Game - Game Start
+[DEBUG] 2017-10-31 12:06:07.858 [main] Session - Player says yes
+[DEBUG] 2017-10-31 12:06:07.858 [main] Game - Game Constructor
+[DEBUG] 2017-10-31 12:06:07.858 [main] Game - Game Start
+[DEBUG] 2017-10-31 12:23:06.567 [main] Session - Player says yes
+[DEBUG] 2017-10-31 12:23:06.567 [main] Game - Game Constructor
+[DEBUG] 2017-10-31 12:23:06.583 [main] Game - Game Start
+[DEBUG] 2017-10-31 12:24:29.361 [main] Session - Player says yes
+[DEBUG] 2017-10-31 12:24:29.361 [main] Game - Game Constructor
+[DEBUG] 2017-10-31 12:24:29.361 [main] Game - Game Start
+[DEBUG] 2017-10-31 12:28:38.763 [main] Session - Player says yes
+[DEBUG] 2017-10-31 12:28:38.763 [main] Game - Game Constructor
+[DEBUG] 2017-10-31 12:28:38.763 [main] Game - Game Start
+[DEBUG] 2017-10-31 12:31:38.801 [main] Session - Player says yes
+[DEBUG] 2017-10-31 12:31:38.801 [main] Game - Game Constructor
+[DEBUG] 2017-10-31 12:31:38.817 [main] Game - Game Start
+[DEBUG] 2017-10-31 12:33:11.112 [main] Session - Player says yes
+[DEBUG] 2017-10-31 12:33:11.112 [main] Game - Game Constructor
+[DEBUG] 2017-10-31 12:33:11.112 [main] Game - Game Start
+[DEBUG] 2017-10-31 12:34:09.578 [main] Session - Player says yes
+[DEBUG] 2017-10-31 12:34:09.594 [main] Game - Game Constructor
+[DEBUG] 2017-10-31 12:34:09.594 [main] Game - Game Start
+[DEBUG] 2017-10-31 12:41:52.012 [main] Session - Player says yes
+[DEBUG] 2017-10-31 12:41:52.027 [main] Game - Game Constructor
+[DEBUG] 2017-10-31 12:41:52.027 [main] Game - Game Start
+[DEBUG] 2017-10-31 12:43:53.912 [main] Session - Player says yes
+[DEBUG] 2017-10-31 12:43:53.928 [main] Game - Game Constructor
+[DEBUG] 2017-10-31 12:43:53.928 [main] Game - Game Start
+[DEBUG] 2017-10-31 12:46:41.040 [main] Session - Player says yes
+[DEBUG] 2017-10-31 12:46:41.040 [main] Game - Game Constructor
+[DEBUG] 2017-10-31 12:46:41.040 [main] Game - Game Start
+[DEBUG] 2017-10-31 12:46:58.551 [main] Session - Player says no
+[DEBUG] 2017-10-31 12:48:09.790 [main] Session - Player says yes
+[DEBUG] 2017-10-31 12:48:09.790 [main] Game - Game Constructor
+[DEBUG] 2017-10-31 12:48:09.790 [main] Game - Game Start
+[DEBUG] 2017-10-31 12:48:15.142 [main] Session - Player says no
+[DEBUG] 2017-10-31 13:46:02.718 [main] Session - Player says yes
+[DEBUG] 2017-10-31 13:46:02.718 [main] Game - Game Constructor
+[DEBUG] 2017-10-31 13:46:02.718 [main] Game - Game Start
+[DEBUG] 2017-10-31 13:46:08.594 [main] Game - Attempting to adding piece: row ->3 column->4
+[DEBUG] 2017-10-31 13:46:08.594 [main] Game - Validating piece: row-> 3 column-> 4
+lastRow-> -1 lastColumn->-1
+[DEBUG] 2017-10-31 13:55:04.773 [main] Session - Player says yes
+[DEBUG] 2017-10-31 13:55:04.773 [main] Game - Game Constructor
+[DEBUG] 2017-10-31 13:55:04.773 [main] Game - Game Start
+[DEBUG] 2017-10-31 13:55:10.132 [main] Game - Attempting to adding piece: row ->3 column->3
+[DEBUG] 2017-10-31 13:55:10.132 [main] Game - Validating piece: row-> 3 column-> 3
+lastRow-> -1 lastColumn->-1
+[DEBUG] 2017-10-31 13:55:10.132 [main] Game - Calculating points...
+[DEBUG] 2017-10-31 13:57:52.791 [main] Session - Player says yes
+[DEBUG] 2017-10-31 13:57:52.791 [main] Game - Game Constructor
+[DEBUG] 2017-10-31 13:57:52.791 [main] Game - Game Start
+[DEBUG] 2017-10-31 13:57:56.291 [main] Game - Attempting to adding piece: row ->3 column->3
+[DEBUG] 2017-10-31 13:57:56.291 [main] Game - Validating piece: row-> 3 column-> 3
+lastRow-> -1 lastColumn->-1
+[DEBUG] 2017-10-31 13:57:56.291 [main] Game - NOT_OCCUPIED
+[DEBUG] 2017-10-31 13:57:56.291 [main] Game - Calculating points...
+[DEBUG] 2017-10-31 13:59:12.810 [main] Session - Player says yes
+[DEBUG] 2017-10-31 13:59:12.810 [main] Game - Game Constructor
+[DEBUG] 2017-10-31 13:59:12.810 [main] Game - Game Start
+[DEBUG] 2017-10-31 13:59:14.889 [main] Game - Attempting to adding piece: row ->5 column->5
+[DEBUG] 2017-10-31 13:59:14.889 [main] Game - Validating piece: row-> 5 column-> 5
+lastRow-> -1 lastColumn->-1
+[DEBUG] 2017-10-31 13:59:14.889 [main] Game - FORBIDDEN_SPACE
+[DEBUG] 2017-10-31 14:04:01.092 [main] Session - Player says yes
+[DEBUG] 2017-10-31 14:04:01.092 [main] Game - Game Constructor
+[DEBUG] 2017-10-31 14:04:01.092 [main] Game - Game Start
+[DEBUG] 2017-10-31 14:04:04.811 [main] Game - Attempting to adding piece: row ->5 column->5
+[DEBUG] 2017-10-31 14:04:04.811 [main] Game - Validating piece: row-> 5 column-> 5
+lastRow-> -1 lastColumn->-1
+[DEBUG] 2017-10-31 14:04:04.811 [main] Game - FORBIDDEN_SPACE
+[DEBUG] 2017-10-31 14:07:37.214 [main] Session - Player says yes
+[DEBUG] 2017-10-31 14:07:37.214 [main] Game - Game Constructor
+[DEBUG] 2017-10-31 14:07:37.214 [main] Game - Game Start
+[DEBUG] 2017-10-31 14:07:40.933 [main] Game - Attempting to adding piece: row ->5 column->5
+[DEBUG] 2017-10-31 14:07:40.933 [main] Game - Validating piece: row-> 5 column-> 5
+lastRow-> -1 lastColumn->-1
+[DEBUG] 2017-10-31 14:07:40.933 [main] Game - FORBIDDEN_SPACE
+[DEBUG] 2017-10-31 14:08:37.116 [main] Session - Player says yes
+[DEBUG] 2017-10-31 14:08:37.116 [main] Game - Game Constructor
+[DEBUG] 2017-10-31 14:08:37.116 [main] Game - Game Start
+[DEBUG] 2017-10-31 14:08:39.304 [main] Game - Attempting to adding piece: row ->5 column->5
+[DEBUG] 2017-10-31 14:08:39.304 [main] Game - Validating piece: row-> 5 column-> 5
+lastRow-> -1 lastColumn->-1
+[DEBUG] 2017-10-31 14:08:39.304 [main] Game - FORBIDDEN_SPACE
+[DEBUG] 2017-10-31 14:08:39.304 [main] Game - false
+[DEBUG] 2017-10-31 14:08:39.304 [main] Game - Validating piece: row-> 5 column-> 5
+lastRow-> -1 lastColumn->-1
+[DEBUG] 2017-10-31 14:08:39.304 [main] Game - FORBIDDEN_SPACE
+[DEBUG] 2017-10-31 14:09:25.641 [main] Session - Player says yes
+[DEBUG] 2017-10-31 14:09:25.641 [main] Game - Game Constructor
+[DEBUG] 2017-10-31 14:09:25.641 [main] Game - Game Start
+[DEBUG] 2017-10-31 14:09:28.157 [main] Game - Attempting to adding piece: row ->5 column->5
+[DEBUG] 2017-10-31 14:09:28.157 [main] Game - COMPUTER_MOVE
+[DEBUG] 2017-10-31 14:09:28.157 [main] Game - Validating piece: row-> 5 column-> 5
+lastRow-> -1 lastColumn->-1
+[DEBUG] 2017-10-31 14:09:28.157 [main] Game - FORBIDDEN_SPACE
+[DEBUG] 2017-10-31 14:10:15.508 [main] Session - Player says yes
+[DEBUG] 2017-10-31 14:10:15.508 [main] Game - Game Constructor
+[DEBUG] 2017-10-31 14:10:15.508 [main] Game - Game Start
+[DEBUG] 2017-10-31 14:10:19.009 [main] Game - Attempting to adding piece: row ->5 column->5
+[DEBUG] 2017-10-31 14:10:19.009 [main] Game - HUMAN_MOVE
+[DEBUG] 2017-10-31 14:10:19.009 [main] Game - Validating piece: row-> 5 column-> 5
+lastRow-> -1 lastColumn->-1
+[DEBUG] 2017-10-31 14:10:19.009 [main] Game - FORBIDDEN_SPACE
+[DEBUG] 2017-10-31 14:10:22.624 [main] Game - Attempting to adding piece: row ->5 column->5
+[DEBUG] 2017-10-31 14:10:22.624 [main] Game - HUMAN_MOVE
+[DEBUG] 2017-10-31 14:10:22.624 [main] Game - Validating piece: row-> 5 column-> 5
+lastRow-> -1 lastColumn->-1
+[DEBUG] 2017-10-31 14:10:22.624 [main] Game - FORBIDDEN_SPACE
+[DEBUG] 2017-10-31 14:10:25.139 [main] Game - Attempting to adding piece: row ->5 column->6
+[DEBUG] 2017-10-31 14:10:25.139 [main] Game - HUMAN_MOVE
+[DEBUG] 2017-10-31 14:10:25.139 [main] Game - Validating piece: row-> 5 column-> 6
+lastRow-> -1 lastColumn->-1
+[DEBUG] 2017-10-31 14:10:25.139 [main] Game - NOT_OCCUPIED
+[DEBUG] 2017-10-31 14:10:25.139 [main] Game - Calculating points...
+[DEBUG] 2017-10-31 14:11:06.822 [main] Session - Player says yes
+[DEBUG] 2017-10-31 14:11:06.822 [main] Game - Game Constructor
+[DEBUG] 2017-10-31 14:11:06.822 [main] Game - Game Start
+[DEBUG] 2017-10-31 14:11:09.541 [main] Game - Attempting to adding piece: row ->5 column->5
+[DEBUG] 2017-10-31 14:11:09.541 [main] Game - HUMAN_MOVE
+[DEBUG] 2017-10-31 14:11:09.541 [main] Game - Validating piece: row-> 5 column-> 5
+lastRow-> -1 lastColumn->-1
+[DEBUG] 2017-10-31 14:11:09.541 [main] Game - FORBIDDEN_SPACE
+[DEBUG] 2017-10-31 14:11:12.600 [main] Game - Attempting to adding piece: row ->5 column->6
+[DEBUG] 2017-10-31 14:11:12.600 [main] Game - HUMAN_MOVE
+[DEBUG] 2017-10-31 14:11:12.600 [main] Game - Validating piece: row-> 5 column-> 6
+lastRow-> -1 lastColumn->-1
+[DEBUG] 2017-10-31 14:11:12.600 [main] Game - NOT_OCCUPIED
+[DEBUG] 2017-10-31 14:11:12.600 [main] Game - Calculating points...
