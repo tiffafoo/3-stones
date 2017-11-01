@@ -159,3 +159,12 @@ lastRow-> -1 lastColumn->-1
 lastRow-> -1 lastColumn->-1
 [DEBUG] 2017-10-31 14:11:12.600 [main] Game - NOT_OCCUPIED
 [DEBUG] 2017-10-31 14:11:12.600 [main] Game - Calculating points...
+[DEBUG] 2017-11-01 14:29:53.586 [main] Session - Player says yes
+[DEBUG] 2017-11-01 14:29:53.586 [main] Game - Game Constructor
+[DEBUG] 2017-11-01 14:29:53.586 [main] Game - Game Start
+[DEBUG] 2017-11-01 14:30:22.984 [main] Game - Attempting to adding piece: row ->4 column->6
+[DEBUG] 2017-11-01 14:30:22.984 [main] Game - HUMAN_MOVE
+[DEBUG] 2017-11-01 14:30:22.984 [main] Game - Validating piece: row-> 4 column-> 6
+lastRow-> -1 lastColumn->-1
+[DEBUG] 2017-11-01 14:30:22.984 [main] Game - Calculating points...
+[DEBUG] 2017-11-01 14:31:54.599 [main] Session - Player says no

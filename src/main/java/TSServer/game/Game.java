@@ -251,7 +251,7 @@ public class Game{
         System.out.println("Welcome, here is the game board: \n");
         //Uses the client 7x7 board to display results
         clientBoard.showClientBoard();
-        System.out.println("Players turn!\n");
+        System.out.println("Players turn!");
         //Get the player row and column choicce
         getPlayerMove();
         
