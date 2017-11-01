@@ -18,7 +18,7 @@ public class Session{
     private Scanner keyBoard;
     boolean playAgain;
     String userChoice;
-    
+
     /**
      * No parameter constructor which initializes the Scanner object, the choice
      * of the player and the boolean playAgain which will determine if the loop
