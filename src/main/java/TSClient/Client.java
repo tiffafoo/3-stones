@@ -1,5 +1,6 @@
 package TSClient;
 
+import TSServer.game.Session;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -10,6 +11,7 @@ import java.net.SocketException;
 public class Client
 {
 
+    //Commented out to test the playSession
     public static void main(String[] args) throws IOException
     {
         // Create an instance of the server

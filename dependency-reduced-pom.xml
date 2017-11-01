@@ -8,7 +8,13 @@
   <description>3 stones</description>
   <developers>
     <developer>
-      <name>The three amigos</name>
+      <name>Tiffany Le-Nguyen</name>
+    </developer>
+    <developer>
+      <name>Trevor Eames</name>
+    </developer>
+    <developer>
+      <name>Alessandro Ciotola</name>
     </developer>
   </developers>
   <organization>
@@ -78,6 +84,7 @@
     </dependency>
   </dependencies>
   <properties>
+    <mainClass>TSClient.Client</mainClass>
     <maven.compiler.source>1.8</maven.compiler.source>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.target>1.8</maven.compiler.target>
