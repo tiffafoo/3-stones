@@ -58,10 +58,14 @@ public class Server
                                 response[0] = 0;
                                 packet.write(response, clntSock);
                                 break;
-                        case 1: //End game logic
+                        case 1: response[0] = 1;
+                                packet.write(response, clntSock);
                                 break;
-                        case 2: game.addPiece(input[1], input[2], Slot.HUMAN_MOVE);
-                                //return a message indicating that it worked or not
+                        case 2: if(game.addPiece(input[1], input[2], Slot.HUMAN_MOVE) == true);
+                                game.addPiece(input[1], input[2], Slot.HUMAN_MOVE);
+                                response[0] = 2;
+
+                                packet.write(response, clntSock);
                                 break;
                         case 3: game.
                     }

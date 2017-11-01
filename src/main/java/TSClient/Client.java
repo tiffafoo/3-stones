@@ -50,10 +50,12 @@ public class Client
             totalBytesRcvd += bytesRcvd;
             byte[] input = packet.read(socket);
             switch (input[0]) {
-                case -1: //need to send a new move?
-                    // continue;
+                case -1: System.out.println();
 
-                case 0: game = new Game();
+                case 0: board = new Board();
+                        board.showClientBoard();
+                        //wait for client play
+
                     break;
                 case 1: //End game logic
                     break;
