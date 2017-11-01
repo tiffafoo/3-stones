@@ -1,6 +1,7 @@
 package TSServer.game;
 
 import TSClient.Board;
+
 import java.util.Random;
 import java.util.Scanner;
 import org.slf4j.LoggerFactory;
@@ -41,16 +42,16 @@ public class Game{
      * Get current computer score
      * @return points of score
      */
-    public int getCompPoints() {
-        return compPoints;
+    public byte getCompPoints() {
+        return (byte) compPoints;
     }
 
     /**
      * Get current player score
      * @return points of player
      */
-    public int getPlayerPoints() {
-        return playerPoints;
+    public byte getPlayerPoints() {
+        return (byte) playerPoints;
     }
 
     /**
