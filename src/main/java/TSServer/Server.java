@@ -61,13 +61,13 @@ public class Server
                         case 1: response[0] = 1;
                                 packet.write(response, clntSock);
                                 break;
-                        case 2: if(game.addPiece(input[1], input[2], Slot.HUMAN_MOVE) == true);
+                        case 2: if(game.addPiece(input[1], input[2], Slot.HUMAN_MOVE));
                                 game.addPiece(input[1], input[2], Slot.HUMAN_MOVE);
                                 response[0] = 2;
 
                                 packet.write(response, clntSock);
                                 break;
-                        case 3: game.
+                        case 3:
                     }
                 }
             }
