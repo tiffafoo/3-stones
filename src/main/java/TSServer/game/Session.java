@@ -1,7 +1,5 @@
 package TSServer.game;
 
-import TSClient.Board;
-import TSClient.Client;
 import java.util.Scanner;
 import org.slf4j.LoggerFactory;
 
@@ -49,8 +47,7 @@ public class Session{
             if (userChoice.equalsIgnoreCase("y")){
                 log.debug("Player says yes");
                 Game tsGame = new Game();
-                Board b = new Board();
-                b.startGame();
+                tsGame.startGame();
             }
             else{
                 log.debug("Player says no");
