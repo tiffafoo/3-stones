@@ -1,6 +1,7 @@
 package TSServer;
 
-import jdk.internal.util.xml.impl.Input;
+import TSServer.game.Game;
+import TSServer.game.Slot;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,6 +24,8 @@ public class Server
 
         // Create a server socket to accept client connection requests
         ServerSocket servSock = new ServerSocket(servPort);
+        Packet packet = new Packet();
+        Game game = new Game();
 
         // Size of received message
         int recvMsgSize;
@@ -44,8 +47,24 @@ public class Server
             OutputStream out = clntSock.getOutputStream();
 
             // Receive until client closes connection, indicated by -1 return
+            // TODO: Should while conditional be checking that the opcode is not -1? -> Handle in switch
             while ((recvMsgSize = in.read(byteBuffer)) != -1) {
-                out.write(byteBuffer, 0, recvMsgSize);
+                byte[] input = packet.read(clntSock);
+
+                if(!(input.length == 0)){
+                    switch (input[0]) {
+                        case -1: continue;
+
+                        case 0: game = new Game();
+                                break;
+                        case 1: //End game logic
+                                break;
+                        case 2: game.addPiece(input[1], input[2], Slot.HUMAN_MOVE);
+                                //return a message indicating that it worked or not
+                                break;
+                        case 3: game.
+                    }
+                }
             }
             // Close the socket. This client is finished.
             clntSock.close();

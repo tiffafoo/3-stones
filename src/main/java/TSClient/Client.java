@@ -1,5 +1,7 @@
 package TSClient;
 
+import TSServer.Packet;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -15,6 +17,8 @@ public class Client
         // Create an instance of the server
         // start the server
         // TSServer server = bla
+        Packet packet = new Packet();
+        Board board = new Board();
 
         if ((args.length < 2) || (args.length > 3))	// Test for correct # of args
             throw new IllegalArgumentException("Parameter(s): <TSServer> <Word> [<Port>]");
@@ -43,6 +47,20 @@ public class Client
                     byteBuffer.length - totalBytesRcvd)) == -1)
                 throw new SocketException("Connection close prematurely");
             totalBytesRcvd += bytesRcvd;
+            byte[] input = packet.read(socket);
+            switch (input[0]) {
+                case -1: //need to send a new move?
+                    // continue;
+
+                case 0: game = new Game();
+                    break;
+                case 1: //End game logic
+                    break;
+                case 2: game.addPiece(input[1], input[2], /*Cell state here */);
+                    //return a message indicating that it worked or not
+                    break;
+                case 3: game.
+
         }
 
         System.out.println("Received: " + new String(byteBuffer));
