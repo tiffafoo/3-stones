@@ -1,12 +1,21 @@
 package TSServer.game;
 
-import TSServer.game.Slot;
-
-public class InnerBoard {
-    private Slot[][] boardArray; // 11 x 11 with [-1, 0, 1, 2] or strings
+/**
+ * Class responsible for creating and filling the 11X11 array which will be keeping
+ * track of all the moves the computer and play make. Used to simplify the calculation 
+ * of moves and points.
+ * 
+ * @author Tiffany Le-Nguyen
+ * @author Trevor Eames
+ * @author Alessandro Ciotola
+ * 
+ */
+public class InnerBoard{
+    //Set the size of the array
+    private Slot[][] boardArray = new Slot[11][11];
 
     // Initializes the board
-    public InnerBoard() {
+    public InnerBoard(){        
         // First two columns (0, 1)
         fillSlots(0, 2, 0, 11, Slot.FORBIDDEN_SPACE);
 
@@ -14,8 +23,8 @@ public class InnerBoard {
         fillSlots(9, 11, 0, 11, Slot.FORBIDDEN_SPACE);
 
         // Column 2
-        fillSlots(2,3, 0, 3, Slot.FORBIDDEN_SPACE);
-        fillSlots(2, 3, 3, 7, Slot.NOT_OCCUPIED);
+        fillSlots(2, 3, 0, 4, Slot.FORBIDDEN_SPACE);
+        fillSlots(2, 3, 4, 7, Slot.NOT_OCCUPIED);
         fillSlots(2, 3, 7, 11, Slot.FORBIDDEN_SPACE);
 
         // Column 3
@@ -36,18 +45,18 @@ public class InnerBoard {
         fillSlots(7, 8, 8, 11, Slot.FORBIDDEN_SPACE);
 
         // Column 8
-        fillSlots(8,9, 0, 3, Slot.FORBIDDEN_SPACE);
-        fillSlots(8, 9, 3, 7, Slot.NOT_OCCUPIED);
+        fillSlots(8, 9, 0, 4, Slot.FORBIDDEN_SPACE);
+        fillSlots(8, 9, 4, 7, Slot.NOT_OCCUPIED);
         fillSlots(8, 9, 7, 11, Slot.FORBIDDEN_SPACE);
 
         // Middle empty forbidden
         boardArray[5][5] = Slot.FORBIDDEN_SPACE;
-
     }
 
     /**
      * Fills slots of the boardArray with
      * a slot value from a given start and end position
+     * 
      * @param xStart (inclusive)
      * @param xEnd (non-inclusive)
      * @param yStart (inclusive)
@@ -62,12 +71,23 @@ public class InnerBoard {
         }
     }
 
+    /**
+     * Method which returns the boardArray
+     * 
+     * @return 
+     */
     public Slot[][] getBoardArray() {
         return boardArray;
     }
 
+    /**
+     * Method which will add the value to the selected position in the board array.
+     * 
+     * @param row
+     * @param column
+     * @param value 
+     */
     public void add(int row, int column, Slot value) {
         boardArray[row][column] = value;
     }
-
 }

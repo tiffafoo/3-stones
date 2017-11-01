@@ -21,7 +21,13 @@
     <!-- Identifies the programmer or programmers who worked on the project -->
     <developers>
         <developer>
-            <name>The three amigos</name>
+            <name>Tiffany Le-Nguyen</name>
+        </developer>
+        <developer>
+            <name>Trevor Eames</name>
+        </developer>
+        <developer>
+            <name>Alessandro Ciotola</name>
         </developer>
     </developers>
 

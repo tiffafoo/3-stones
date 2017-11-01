@@ -50,12 +50,13 @@ public class Server
             // TODO: Should while conditional be checking that the opcode is not -1? -> Handle in switch
             while ((recvMsgSize = in.read(byteBuffer)) != -1) {
                 byte[] input = packet.read(clntSock);
+                byte[] response = new byte[];
 
                 if(!(input.length == 0)){
                     switch (input[0]) {
-                        case -1: continue;
-
                         case 0: game = new Game();
+                                response[0] = 0;
+                                packet.write(response, clntSock);
                                 break;
                         case 1: //End game logic
                                 break;
