@@ -64,7 +64,7 @@ public class Server
                         case 2: if(game.addPiece(input[1], input[2], Slot.HUMAN_MOVE));
                                 game.addPiece(input[1], input[2], Slot.HUMAN_MOVE);
                                 response[0] = 2;
-
+                                //set response[1]&[2] to the server row and column
                                 packet.write(response, clntSock);
                                 break;
                         case 3:
