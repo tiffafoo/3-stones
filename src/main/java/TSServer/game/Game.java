@@ -38,13 +38,29 @@ public class Game{
     }
 
     /**
+     * Get current computer score
+     * @return points of score
+     */
+    public int getCompPoints() {
+        return compPoints;
+    }
+
+    /**
+     * Get current player score
+     * @return points of player
+     */
+    public int getPlayerPoints() {
+        return playerPoints;
+    }
+
+    /**
      * Add a piece to the boardArray
      * 
      * @param row
      * @param column
      * @param cellState
      */
-    public void addPiece(int row, int column, Slot cellState) {
+    public boolean addPiece(int row, int column, Slot cellState) {
         // Either while loop or check with other side
         log.debug("Attempting to adding piece: row ->" + row + " column->" + column);
 
@@ -64,6 +80,7 @@ public class Game{
                 playerPoints += calculatePoints(row, column, cellState);
             
             clientBoard.showClientBoard();
+            return true;
         } 
         else{
            // Computer will constantly look for a new piece until it's valid,
@@ -72,7 +89,9 @@ public class Game{
            if(cellState == Slot.HUMAN_MOVE){
                 System.out.println("Invalid move, please try again!");
                 getPlayerMove();
+                return false;
            }
+           return true;
         }
     }
 
