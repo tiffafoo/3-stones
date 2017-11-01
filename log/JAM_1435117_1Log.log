@@ -168,3 +168,52 @@ lastRow-> -1 lastColumn->-1
 lastRow-> -1 lastColumn->-1
 [DEBUG] 2017-11-01 14:30:22.984 [main] Game - Calculating points...
 [DEBUG] 2017-11-01 14:31:54.599 [main] Session - Player says no
+[DEBUG] 2017-11-01 15:00:50.013 [main] Session - Player says yes
+[DEBUG] 2017-11-01 15:00:50.013 [main] Game - Game Constructor
+[DEBUG] 2017-11-01 15:00:50.013 [main] Game - Game Start
+[DEBUG] 2017-11-01 15:03:44.232 [main] Session - Player says yes
+[DEBUG] 2017-11-01 15:03:44.232 [main] Game - Game Constructor
+[DEBUG] 2017-11-01 15:03:44.232 [main] Game - Game Start
+[DEBUG] 2017-11-01 15:03:50.737 [main] Game - Attempting to adding piece: row ->4 column->5
+[DEBUG] 2017-11-01 15:03:50.737 [main] Game - HUMAN_MOVE
+[DEBUG] 2017-11-01 15:03:50.737 [main] Game - Validating piece: row-> 4 column-> 5
+lastRow-> -1 lastColumn->-1
+[DEBUG] 2017-11-01 15:03:50.737 [main] Game - Calculating points...
+[DEBUG] 2017-11-01 15:08:47.802 [main] Session - Player says yes
+[DEBUG] 2017-11-01 15:08:47.802 [main] Game - Game Constructor
+[DEBUG] 2017-11-01 15:08:47.802 [main] Game - Game Start
+[DEBUG] 2017-11-01 15:08:55.121 [main] Game - Attempting to adding piece: row ->4 column->5
+[DEBUG] 2017-11-01 15:08:55.121 [main] Game - HUMAN_MOVE
+[DEBUG] 2017-11-01 15:08:55.121 [main] Game - Validating piece: row-> 4 column-> 5
+lastRow-> -1 lastColumn->-1
+[DEBUG] 2017-11-01 15:08:55.121 [main] Game - Calculating points...
+[DEBUG] 2017-11-01 15:12:24.772 [main] Session - Player says yes
+[DEBUG] 2017-11-01 15:12:24.772 [main] Game - Game Constructor
+[DEBUG] 2017-11-01 15:12:24.772 [main] Game - Game Start
+[DEBUG] 2017-11-01 15:12:48.706 [main] Game - Attempting to adding piece: row ->5 column->6
+[DEBUG] 2017-11-01 15:12:48.706 [main] Game - HUMAN_MOVE
+[DEBUG] 2017-11-01 15:12:48.706 [main] Game - Validating piece: row-> 5 column-> 6
+lastRow-> -1 lastColumn->-1
+[DEBUG] 2017-11-01 15:12:48.706 [main] Game - Calculating points...
+[DEBUG] 2017-11-01 15:14:08.395 [main] Session - Player says yes
+[DEBUG] 2017-11-01 15:14:08.395 [main] Game - Game Constructor
+[DEBUG] 2017-11-01 15:14:08.395 [main] Game - Game Start
+[DEBUG] 2017-11-01 15:15:05.095 [main] Session - Player says yes
+[DEBUG] 2017-11-01 15:15:05.095 [main] Game - Game Constructor
+[DEBUG] 2017-11-01 15:15:05.095 [main] Game - Game Start
+[DEBUG] 2017-11-01 15:29:46.340 [main] Session - Player says yes
+[DEBUG] 2017-11-01 15:29:46.340 [main] Game - Game Constructor
+[DEBUG] 2017-11-01 15:31:13.645 [main] Session - Player says yes
+[DEBUG] 2017-11-01 15:31:13.645 [main] Game - Game Constructor
+[DEBUG] 2017-11-01 15:31:13.645 [main] Board - Game Start
+[DEBUG] 2017-11-01 15:32:04.445 [main] Session - Player says yes
+[DEBUG] 2017-11-01 15:32:04.445 [main] Game - Game Constructor
+[DEBUG] 2017-11-01 15:32:04.445 [main] Board - Game Start
+[DEBUG] 2017-11-01 15:33:13.023 [main] Session - Player says yes
+[DEBUG] 2017-11-01 15:33:13.023 [main] Game - Game Constructor
+[DEBUG] 2017-11-01 15:33:13.023 [main] Board - Game Start
+[DEBUG] 2017-11-01 15:33:35.539 [main] Session - Player says no
+[DEBUG] 2017-11-01 15:44:35.877 [main] Session - Player says yes
+[DEBUG] 2017-11-01 15:44:35.877 [main] Game - Game Constructor
+[DEBUG] 2017-11-01 15:44:35.877 [main] Board - Game Start
+[DEBUG] 2017-11-01 15:51:07.666 [main] Session - Player says no

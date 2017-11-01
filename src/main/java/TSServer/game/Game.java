@@ -89,12 +89,12 @@ public class Game{
            // let them try again.
            if(cellState == Slot.HUMAN_MOVE){
                 System.out.println("Invalid move, please try again!");
-                getPlayerMove();
+                clientBoard.getPlayerMove();
                 return false;
            }
            return true;
         }
-    }
+    }    
 
     /**
      * Validate the move, follows the rules of
@@ -200,7 +200,8 @@ public class Game{
      * are possible, find an empty valid position.
      * 
      */
-    public void getNextMove(){
+    public byte[] getNextMove(){
+        byte[] move = new byte[2];
         int scoreHolder = 0;
         int calculatedHolder = -1;
         int bestRowHolder = -1;
@@ -230,9 +231,14 @@ public class Game{
         if(bestRowHolder != -1){
             log.debug("Best Row: " + bestRowHolder + " Best Column: " + bestColumnHolder);
             addPiece(bestRowHolder, bestColumnHolder, cellState);
+            move[0] = (byte) bestRowHolder;
+            move[1] = (byte) bestColumnHolder;
+            return move;
         }
-        else
-            getRandomSpot(cellState);
+        else{
+            move = getRandomSpot(cellState);
+            return move;
+        }
     }
     
     /**
@@ -240,10 +246,12 @@ public class Game{
      * number is valid, add the piece to the board.
      * 
      * @param cellState 
+     * @return  
      */
-    public void getRandomSpot(Slot cellState){
+    public byte[] getRandomSpot(Slot cellState){
         //Get a random number generator
         Random randomSpace = new Random();    
+        byte[] move = new byte[2];
         //Make 2 variables to hold the random numbers. I set them to 0 because
         //at position [0,0] the space should always be FORBIDDEN_SPACE.                
         int rdmRowHolder = 0, rdmColumnHolder = 0;        
@@ -257,44 +265,9 @@ public class Game{
         }
         //Will only arrive here if the random piece is valid, so add to board!
         log.debug("Random Row: " + rdmRowHolder + " Random Column: " + rdmColumnHolder);
-        addPiece(rdmRowHolder, rdmColumnHolder, cellState);        
-    }
-        
-    /**
-     * Method which will begin the game and call the methods required for user 
-     * input and to display the initial board.
-     * Probably will be called when both the server and client are ready to play
-     * 
-     */
-    public void startGame(){
-        log.debug("Game Start");
-        System.out.println("Welcome, here is the game board: \n");
-        //Uses the client 7x7 board to display results
-        clientBoard.showClientBoard();
-        System.out.println("Players turn!");
-        //Get the player row and column choicce
-        getPlayerMove();
-        
-        //Computers turn!!!      
-        //Rest of game
-    }
-    
-    /**
-     * Method which will ask the user to enter a row and column and check if it 
-     * is valid.
-     * 
-     */
-    private void getPlayerMove(){
-        int row = 0, col = 0;
-        System.out.println("Please select a row: ");
-        while (!keyBoard.hasNextInt())
-            keyBoard.next();        
-        row = keyBoard.nextInt();
-        System.out.println("Please select a column: ");
-        while (!keyBoard.hasNextInt())
-            keyBoard.next();        
-        col = keyBoard.nextInt();
-        
-        addPiece(row + 2, col + 2, Slot.HUMAN_MOVE);         
+        move[0] = (byte) rdmRowHolder;
+        move[1] = (byte) rdmColumnHolder;
+        addPiece(rdmRowHolder, rdmColumnHolder, cellState);
+        return move;
     }
 }
