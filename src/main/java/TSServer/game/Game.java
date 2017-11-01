@@ -71,10 +71,10 @@ public class Game{
            // let them try again.
            if(cellState == Slot.HUMAN_MOVE){
                 System.out.println("Invalid move, please try again!");
-                getPlayerMove();
+                clientBoard.getPlayerMove();
            }
         }
-    }
+    }    
 
     /**
      * Validate the move, follows the rules of
@@ -238,43 +238,5 @@ public class Game{
         //Will only arrive here if the random piece is valid, so add to board!
         log.debug("Random Row: " + rdmRowHolder + " Random Column: " + rdmColumnHolder);
         addPiece(rdmRowHolder, rdmColumnHolder, cellState);        
-    }
-        
-    /**
-     * Method which will begin the game and call the methods required for user 
-     * input and to display the initial board.
-     * Probably will be called when both the server and client are ready to play
-     * 
-     */
-    public void startGame(){
-        log.debug("Game Start");
-        System.out.println("Welcome, here is the game board: \n");
-        //Uses the client 7x7 board to display results
-        clientBoard.showClientBoard();
-        System.out.println("Players turn!");
-        //Get the player row and column choicce
-        getPlayerMove();
-        
-        //Computers turn!!!      
-        //Rest of game
-    }
-    
-    /**
-     * Method which will ask the user to enter a row and column and check if it 
-     * is valid.
-     * 
-     */
-    private void getPlayerMove(){
-        int row = 0, col = 0;
-        System.out.println("Please select a row: ");
-        while (!keyBoard.hasNextInt())
-            keyBoard.next();        
-        row = keyBoard.nextInt();
-        System.out.println("Please select a column: ");
-        while (!keyBoard.hasNextInt())
-            keyBoard.next();        
-        col = keyBoard.nextInt();
-        
-        addPiece(row + 2, col + 2, Slot.HUMAN_MOVE);         
     }
 }
