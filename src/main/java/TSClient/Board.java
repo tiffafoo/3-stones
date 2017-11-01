@@ -161,5 +161,27 @@ public class Board {
         
         return move;
     }
+    
+    /**
+     * Method which displays who won the game and how many points each player got.
+     * 
+     * @param playerScore
+     * @param computerScore 
+     */
+    public void endGame(byte playerScore, byte computerScore){
+        int pScore = 0, cScore = 0;
+        pScore = (int) playerScore;
+        cScore = (int) computerScore;
+        System.out.println("Final Scores:\nPlayer Score: " + pScore + " | "
+                + "Computer Score: " + cScore);
+        
+        if (pScore == cScore)
+            System.out.println("Tie game");
+        else if (pScore > cScore)
+            System.out.println("Player wins");
+        else
+            System.out.println("Computer wins");
+        
+    }       
 }
 

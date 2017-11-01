@@ -213,3 +213,7 @@ lastRow-> -1 lastColumn->-1
 [DEBUG] 2017-11-01 15:33:13.023 [main] Game - Game Constructor
 [DEBUG] 2017-11-01 15:33:13.023 [main] Board - Game Start
 [DEBUG] 2017-11-01 15:33:35.539 [main] Session - Player says no
+[DEBUG] 2017-11-01 15:44:35.877 [main] Session - Player says yes
+[DEBUG] 2017-11-01 15:44:35.877 [main] Game - Game Constructor
+[DEBUG] 2017-11-01 15:44:35.877 [main] Board - Game Start
+[DEBUG] 2017-11-01 15:51:07.666 [main] Session - Player says no

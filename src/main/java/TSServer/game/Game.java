@@ -199,7 +199,8 @@ public class Game{
      * are possible, find an empty valid position.
      * 
      */
-    public void getNextMove(){
+    public byte[] getNextMove(){
+        byte[] move = new byte[2];
         int scoreHolder = 0;
         int calculatedHolder = -1;
         int bestRowHolder = -1;
@@ -229,9 +230,14 @@ public class Game{
         if(bestRowHolder != -1){
             log.debug("Best Row: " + bestRowHolder + " Best Column: " + bestColumnHolder);
             addPiece(bestRowHolder, bestColumnHolder, cellState);
+            move[0] = (byte) bestRowHolder;
+            move[1] = (byte) bestColumnHolder;
+            return move;
         }
-        else
-            getRandomSpot(cellState);
+        else{
+            move = getRandomSpot(cellState);
+            return move;
+        }
     }
     
     /**
@@ -239,10 +245,12 @@ public class Game{
      * number is valid, add the piece to the board.
      * 
      * @param cellState 
+     * @return  
      */
-    public void getRandomSpot(Slot cellState){
+    public byte[] getRandomSpot(Slot cellState){
         //Get a random number generator
         Random randomSpace = new Random();    
+        byte[] move = new byte[2];
         //Make 2 variables to hold the random numbers. I set them to 0 because
         //at position [0,0] the space should always be FORBIDDEN_SPACE.                
         int rdmRowHolder = 0, rdmColumnHolder = 0;        
@@ -256,6 +264,9 @@ public class Game{
         }
         //Will only arrive here if the random piece is valid, so add to board!
         log.debug("Random Row: " + rdmRowHolder + " Random Column: " + rdmColumnHolder);
-        addPiece(rdmRowHolder, rdmColumnHolder, cellState);        
+        move[0] = (byte) rdmRowHolder;
+        move[1] = (byte) rdmColumnHolder;
+        addPiece(rdmRowHolder, rdmColumnHolder, cellState);
+        return move;
     }
 }
