@@ -38,6 +38,22 @@ public class Game{
     }
 
     /**
+     * Get current computer score
+     * @return points of score
+     */
+    public int getCompPoints() {
+        return compPoints;
+    }
+
+    /**
+     * Get current player score
+     * @return points of player
+     */
+    public int getPlayerPoints() {
+        return playerPoints;
+    }
+
+    /**
      * Add a piece to the boardArray
      * 
      * @param row
