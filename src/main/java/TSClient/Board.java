@@ -161,6 +161,22 @@ public class Board {
         
         return move;
     }
+
+    public byte playSession(){
+            //Ask the user if they want to play again. Enter y for yes, n for no.
+            System.out.println("Do you want to play again? (y/n)");
+            String userChoice = keyBoard.nextLine();
+
+            //If they chose yes, start a new game, otherwise, exit the loop.
+            if (userChoice.equalsIgnoreCase("y")){
+                log.debug("Player says yes");
+                return 1;
+            }
+            else{
+                log.debug("Player says no");
+                return 0;
+            }
+    }
     
     /**
      * Method which displays who won the game and how many points each player got.

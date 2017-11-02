@@ -1,73 +1,106 @@
 package TSClient;
 
 import TSServer.Packet;
+import TSServer.game.Slot;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.net.Socket;
-import java.net.SocketException;
+import java.util.Scanner;
 
 // Given by teacher
-public class Client
-{
+public class Client {
 
     //Commented out to test the playSession
-    public static void main(String[] args) throws IOException
-    {
-        // Create an instance of the server
-        // start the server
-        // TSServer server = bla
+    public static void main(String[] args) throws IOException {
+
         Packet packet = new Packet();
         Board board = new Board();
+        Scanner reader = new Scanner(System.in);
+        Boolean keepPlaying = true;
+        byte[] input = new byte[0];
+        byte[] firstPlay = new byte[5];
+        firstPlay[0] = 0;
 
-        if ((args.length < 2) || (args.length > 3))	// Test for correct # of args
-            throw new IllegalArgumentException("Parameter(s): <TSServer> <Word> [<Port>]");
+        System.out.println("Hello, welcome to 3-stones. May I have the ip number of the server you wish to connect to?");
 
-        String server = args[0];					// TSServer name or IP address
-        // Convert input String to bytes using the default character encoding
-        byte[] byteBuffer = args[1].getBytes();
-
-        int servPort = (args.length == 3) ? Integer.parseInt(args[2]) : 7;
+        String server = reader.next();
 
         // Create socket that is connected to server on specified port
-        Socket socket = new Socket(server, servPort);
-        System.out.println("Connected to server...sending echo string");
+        Socket socket = new Socket(server, 50000);
 
-        InputStream in = socket.getInputStream();
-        OutputStream out = socket.getOutputStream();
+        while (keepPlaying) {
+            System.out.println("in the loop");
+            //input = packet.read(socket);
+            System.out.println("Past the read");
+            System.out.println(firstPlay[0]);
+            if(input.length == 0)
+                input = firstPlay;
+            System.out.println(input[0]);
+            byte[] playerMove;
+            byte[] response = new byte[10];
 
-        out.write(byteBuffer);						// Send the encoded string to the server
-
-        // Receive the same string back from the server
-        int totalBytesRcvd = 0;						// Total bytes received so far
-        int bytesRcvd;								// Bytes received in last read
-        while (totalBytesRcvd < byteBuffer.length)
-        {
-            if ((bytesRcvd = in.read(byteBuffer, totalBytesRcvd,
-                    byteBuffer.length - totalBytesRcvd)) == -1)
-                throw new SocketException("Connection close prematurely");
-            totalBytesRcvd += bytesRcvd;
-            byte[] input = packet.read(socket);
             switch (input[0]) {
-                case -1: System.out.println();
-
-                case 0: board = new Board();
-                        board.showClientBoard();
-                        //wait for client play
-
+                case -1:
+                    System.out.println("ERROR");
+                    keepPlaying = false;
                     break;
-                case 1: //End game logic
+                case 0:
+                    board = new Board();
+                    board.showClientBoard();
+                    response[0] = 2;
+                    playerMove = board.getPlayerMove();
+                    response[1] = playerMove[0];
+                    System.out.println(playerMove[0]);
+                    response[2] = playerMove[1];
+                    System.out.println(playerMove[0]);
+                    response[3] = 0;
+                    response[4] = 0;
+                    packet.write(response, socket);
                     break;
-                case 2: game.addPiece(input[1], input[2], /*Cell state here */);
-                    //return a message indicating that it worked or not
+                case 1: board.endGame(input[1], input[2]);
+                    byte playAgain = board.playSession();
+                    if(playAgain == 1)
+                        response[0] = 0;
+                    else
+                        response[0] = 3;
+                    response[1] = 0;
+                    response[2] = 0;
+                    response[3] = 0;
+                    response[4] = 0;
+                    packet.write(response, socket);
                     break;
-                case 3: game.
+                case 2:
+                    board.changeBoardPiece(input[1], input[2], Slot.COMPUTER_MOVE);
+                    board.changeBoardPiece(input[3], input[4], Slot.HUMAN_MOVE);
+                    response[0] = 2;
+                    playerMove = board.getPlayerMove();
+                    response[1] = playerMove[0];
+                    response[2] = playerMove[1];
+                    response[3] = 0;
+                    response[4] = 0;
+                    packet.write(response, socket);
+                    break;
+                case 3: board = new Board();
+                    board.startGame();
+                    response[0] = 2;
+                    playerMove = board.getPlayerMove();
+                    response[1] = playerMove[0];
+                    response[2] = playerMove[1];
+                    response[3] = 0;
+                    response[4] = 0;
+                    packet.write(response, socket);
+                    break;
+                case 4: System.out.println("Your move was invalid, please play again");
+                    playerMove = board.getPlayerMove();
+                    response[0] = 2;
+                    response[1] = playerMove[0];
+                    response[2] = playerMove[1];
+                    response[3] = 0;
+                    response[4] = 0;
 
+            }
+
+            socket.close();                                // Close the socket and its streams
         }
-
-        System.out.println("Received: " + new String(byteBuffer));
-
-        socket.close();								// Close the socket and its streams
     }
 }

@@ -217,3 +217,40 @@ lastRow-> -1 lastColumn->-1
 [DEBUG] 2017-11-01 15:44:35.877 [main] Game - Game Constructor
 [DEBUG] 2017-11-01 15:44:35.877 [main] Board - Game Start
 [DEBUG] 2017-11-01 15:51:07.666 [main] Session - Player says no
+[DEBUG] 2017-11-01 20:05:49.939 [main] Game - Game Constructor
+[DEBUG] 2017-11-01 20:10:12.891 [main] Game - Game Constructor
+[DEBUG] 2017-11-01 20:12:42.218 [main] Game - Game Constructor
+[DEBUG] 2017-11-01 20:13:58.005 [main] Game - Game Constructor
+[DEBUG] 2017-11-01 20:15:56.279 [main] Game - Game Constructor
+[DEBUG] 2017-11-01 20:17:21.773 [main] Game - Game Constructor
+[DEBUG] 2017-11-01 20:21:32.968 [main] Game - Game Constructor
+[DEBUG] 2017-11-01 20:23:30.251 [main] Game - Game Constructor
+[DEBUG] 2017-11-01 20:33:57.874 [main] Game - Game Constructor
+[DEBUG] 2017-11-01 20:35:16.165 [main] Game - Game Constructor
+[DEBUG] 2017-11-01 20:37:58.937 [main] Game - Game Constructor
+[DEBUG] 2017-11-01 20:38:52.250 [main] Packet - Writing packet: [B@11758f2a
+[DEBUG] 2017-11-01 20:38:52.256 [main] Packet - Received packet: [B@42eca56e
+[DEBUG] 2017-11-01 20:38:52.256 [main] Game - Attempting to adding piece: row ->3 column->4
+[DEBUG] 2017-11-01 20:38:52.257 [main] Game - HUMAN_MOVE
+[DEBUG] 2017-11-01 20:38:52.257 [main] Game - Validating piece: row-> 3 column-> 4
+lastRow-> -1 lastColumn->-1
+[DEBUG] 2017-11-01 20:38:52.257 [main] Game - Calculating points...
+[DEBUG] 2017-11-01 20:38:52.258 [main] Game - Attempting to adding piece: row ->3 column->4
+[DEBUG] 2017-11-01 20:38:52.258 [main] Game - HUMAN_MOVE
+[DEBUG] 2017-11-01 20:38:52.258 [main] Game - Validating piece: row-> 3 column-> 4
+lastRow-> 3 lastColumn->4
+[DEBUG] 2017-11-01 20:41:44.309 [main] Game - Game Constructor
+[DEBUG] 2017-11-01 20:41:58.693 [main] Packet - Writing packet: [B@11758f2a
+[DEBUG] 2017-11-01 20:41:58.699 [main] Packet - Received packet: [B@42eca56e
+[DEBUG] 2017-11-01 20:41:58.699 [main] Game - Attempting to adding piece: row ->2 column->2
+[DEBUG] 2017-11-01 20:41:58.699 [main] Game - HUMAN_MOVE
+[DEBUG] 2017-11-01 20:41:58.700 [main] Game - Validating piece: row-> 2 column-> 2
+lastRow-> -1 lastColumn->-1
+[DEBUG] 2017-11-01 20:51:19.525 [main] Game - Game Constructor
+[DEBUG] 2017-11-01 20:51:48.742 [main] Packet - Writing packet: [B@11758f2a
+[DEBUG] 2017-11-01 20:51:48.748 [main] Packet - Received packet: [B@52f759d7
+[DEBUG] 2017-11-01 20:51:48.748 [main] Game - Attempting to adding piece: row ->5 column->5
+[DEBUG] 2017-11-01 20:51:48.749 [main] Game - HUMAN_MOVE
+[DEBUG] 2017-11-01 20:51:48.749 [main] Game - Validating piece: row-> 5 column-> 5
+lastRow-> -1 lastColumn->-1
+[DEBUG] 2017-11-01 20:51:48.749 [main] Packet - Writing packet: [B@7cbd213e

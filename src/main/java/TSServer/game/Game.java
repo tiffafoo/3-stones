@@ -21,7 +21,7 @@ public class Game{
     private int piecesPlayed = 0; // max 30 game stops
     private int lastColumn = -1;
     private int lastRow = -1;
-    private Board clientBoard;
+    //private Board clientBoard;
     private InnerBoard innerBoard;
     private Slot[][] gameBoard;
     private int playerPoints = 0;
@@ -33,7 +33,7 @@ public class Game{
      */
     public Game(){
         log.debug("Game Constructor");
-        clientBoard = new Board();
+        //clientBoard = new Board();
         innerBoard = new InnerBoard();
         gameBoard = innerBoard.getBoardArray();
     }
@@ -70,7 +70,7 @@ public class Game{
         if (validatePiece(row, column, lastRow, lastColumn)){
             innerBoard.add(row, column, cellState);
             //Add piece to the client board
-            clientBoard.changeBoardPiece(row - 2, column - 2, cellState);
+            //clientBoard.changeBoardPiece(row - 2, column - 2, cellState);
             lastColumn = column;
             lastRow = row;
             piecesPlayed++;
@@ -80,7 +80,7 @@ public class Game{
             else 
                 playerPoints += calculatePoints(row, column, cellState);
             
-            clientBoard.showClientBoard();
+            //clientBoard.showClientBoard();
             return true;
         } 
         else{
@@ -88,8 +88,8 @@ public class Game{
            // so if you are here, then the human made an invalid move, so 
            // let them try again.
            if(cellState == Slot.HUMAN_MOVE){
-                System.out.println("Invalid move, please try again!");
-                clientBoard.getPlayerMove();
+                //System.out.println("Invalid move, please try again!");
+                //clientBoard.getPlayerMove();
                 return false;
            }
            return true;
