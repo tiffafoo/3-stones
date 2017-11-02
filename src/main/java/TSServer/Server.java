@@ -94,7 +94,7 @@ public class Server
                             packet.write(response, clntSock);
                             break;
                         case 3:
-                            response[0] = 3;
+                            response[0] = 4;
                             response[1] = 0;
                             response[2] = 0;
                             response[3] = 0;

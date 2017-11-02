@@ -127,6 +127,9 @@ public class Client {
                         response[5] = 0;
                         packet.write(response, socket);
                         break;
+                    case 4:
+                        keepPlaying = false;
+                        break;
                 }
             }
         socket.close();         // Close the socket and its streams

@@ -26,14 +26,12 @@ public class Game{
     private Slot[][] gameBoard;
     private int playerPoints = 0;
     private int compPoints = 0;
-    private Scanner keyBoard = new Scanner(System.in);
 
     /**
-     * Constructor
+     * No-param constructor
      */
     public Game(){
         log.debug("Game Constructor");
-        //clientBoard = new Board();
         innerBoard = new InnerBoard();
         gameBoard = innerBoard.getBoardArray();
     }
