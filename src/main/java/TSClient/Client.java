@@ -61,7 +61,6 @@ public class Client {
                     break;
                 //Valid move was played and new piece played
                 case 1: 
-                    System.out.println("CHANGEBOARD");
                     board.changeBoardPiece(input[3] - 1, input[4] - 1, Slot.HUMAN_MOVE);
                     board.changeBoardPiece(input[1] - 2, input[2] - 2, Slot.COMPUTER_MOVE);
                     board.showClientBoard();
@@ -74,7 +73,9 @@ public class Client {
                     packet.write(response, socket);
                     break;
                 //End game
-                case 2:board.endGame(input[1], input[2]);
+                case 2:
+                    System.out.println("End Game");
+                    board.endGame(input[1], input[2]);
                     byte playAgain = board.playSession();
                     if(playAgain == 1)
                         response[0] = 0;

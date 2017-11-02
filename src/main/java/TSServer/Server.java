@@ -55,14 +55,25 @@ public class Server
                             packet.write(response, clntSock);
                             break;
                         //Validate player move. If good play it, else respond 4 > Invalid move
-                        case 1: boolean validate = game.addPiece(input[1], input[2], Slot.HUMAN_MOVE);
+                        case 1: 
+                            System.out.println("Pieces played: " + game.getPiecesPlayed());
+                            boolean validate = game.addPiece(input[1], input[2], Slot.HUMAN_MOVE);
                             if(validate) {
-                            response[0] = 1;
-                            byte[] compMove = game.getNextMove();
-                            response[1] = compMove[0];
-                            response[2] = compMove[1];
-                            response[3] = input[1];
-                            response[4] = input[2];
+                                if(game.getPiecesPlayed() >= 30){
+                                    response[0] = 2;
+                                    response[1] = game.getPlayerPoints();
+                                    response[2] = game.getCompPoints();
+                                    response[3] = 0;
+                                    response[4] = 0;
+                                }
+                                else{
+                                    response[0] = 1;
+                                    byte[] compMove = game.getNextMove();
+                                    response[1] = compMove[0];
+                                    response[2] = compMove[1];
+                                    response[3] = input[1];
+                                    response[4] = input[2];
+                                }
                             packet.write(response, clntSock);
                         }
                         else {

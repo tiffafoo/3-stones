@@ -39,6 +39,14 @@ public class Game{
     }
 
     /**
+     * Get current amount of pieces played
+     * @return amount of pieces
+     */
+    public byte getPiecesPlayed() {
+        return (byte) piecesPlayed;
+    }
+    
+    /**
      * Get current computer score
      * @return points of score
      */
@@ -79,7 +87,7 @@ public class Game{
                 return true;
             }
         } else if (cellState == Slot.COMPUTER_MOVE) {
-            innerBoard.add(row, column, cellState);
+            innerBoard.add(row, column, cellState);            
             lastColumn = column;
             lastRow = row;
             piecesPlayed++;
@@ -90,6 +98,7 @@ public class Game{
         return false;
     }    
 
+    
     /**
      * Validate the move, follows the rules of
      * being within one column and row
@@ -207,7 +216,7 @@ public class Game{
 
         log.debug("Getting computer move.");
 
-        for(int i = 0; i < gameBoard.length; i++){
+        for(int i = 1; i < gameBoard.length - 1; i++){
             if (validatePiece(i, lastColumn, lastRow, lastColumn)){
                 log.debug("Trying row: [" + i + "] and column: [" + lastColumn + "]");
 
