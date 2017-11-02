@@ -12,7 +12,6 @@ import java.net.Socket;
 // Given by teacher
 public class Server
 {
-    private static final int BUFSIZE = 32;	// Size of receive buffer
     private final org.slf4j.Logger log = LoggerFactory.getLogger(this.getClass().getName());
 
     public static void main(String[] args) throws IOException
@@ -40,7 +39,7 @@ public class Server
             // Receive until client closes connection, indicated by -1 return
             while (keepPlaying) {
                 byte[] input = packet.read(clntSock);
-                byte[] response = new byte[5];
+                byte[] response = new byte[6];
 
                 if(!(input.length == 0)){
                     switch (input[0]) {
@@ -52,6 +51,7 @@ public class Server
                             response[2] = 0;
                             response[3] = 0;
                             response[4] = 0;
+                            response[5] = 1;
                             packet.write(response, clntSock);
                             break;
                         //Validate player move. If good play it, else respond 4 > Invalid move
@@ -63,6 +63,7 @@ public class Server
                             response[2] = compMove[1];
                             response[3] = input[1];
                             response[4] = input[2];
+                            response[5] = 1;
                             packet.write(response, clntSock);
                         }
                         else {
@@ -71,6 +72,7 @@ public class Server
                             response[2] = 0;
                             response[3] = 0;
                             response[4] = 0;
+                            response[5] = 1;
                             packet.write(response, clntSock);
                         }
                             break;
@@ -79,6 +81,7 @@ public class Server
                             response[2] = game.getCompPoints();
                             response[3] = 0;
                             response[4] = 0;
+                            response[5] = 1;
                             packet.write(response, clntSock);
                             break;
                         case 3:
@@ -87,6 +90,7 @@ public class Server
                             response[2] = 0;
                             response[3] = 0;
                             response[4] = 0;
+                            response[5] = 1;
                             break;
                     }
                 }
