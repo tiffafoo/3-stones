@@ -51,7 +51,7 @@ public class Server
                             response[5] = 1;
                             packet.write(response, clntSock);
                             break;
-                        //Validate player move. If good play it, else respond 4 > Invalid move
+                        //Validate player move. If good, play it, else respond with invalid see 2nd else
                         case 1: System.out.println("Pieces played: " + game.getPiecesPlayed());
                             boolean validate = game.addPiece(input[1], input[2], Slot.HUMAN_MOVE);
                             if(validate) {
@@ -85,6 +85,7 @@ public class Server
                             packet.write(response, clntSock);
                         }
                             break;
+                        //Game ended naturally
                         case 2: response[0] = 1;
                             response[1] = game.getPlayerPoints();
                             response[2] = game.getCompPoints();
@@ -93,6 +94,7 @@ public class Server
                             response[5] = 1;
                             packet.write(response, clntSock);
                             break;
+                        //Player wants to end game
                         case 3:
                             response[0] = 4;
                             response[1] = 0;
@@ -100,11 +102,13 @@ public class Server
                             response[3] = 0;
                             response[4] = 0;
                             response[5] = 1;
+                            keepPlaying = false;
                             packet.write(response, clntSock);
                             break;
                     }
                 }
             }
+            game = new Game();
             // Close the socket. This client is finished.
             clntSock.close();
         }

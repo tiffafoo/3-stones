@@ -1,9 +1,6 @@
 package TSServer.game;
 
-import TSClient.Board;
-
 import java.util.Random;
-import java.util.Scanner;
 import org.slf4j.LoggerFactory;
 
 /**
@@ -21,7 +18,6 @@ public class Game{
     private int piecesPlayed = 0; // max 30 game stops
     private int lastColumn = -1;
     private int lastRow = -1;
-    //private Board clientBoard;
     private InnerBoard innerBoard;
     private Slot[][] gameBoard;
     private int playerPoints = 0;

@@ -47,13 +47,6 @@ public class Packet {
                     + " instead of [" + BUFSIZE +"]" );
         }
 
-//        log.debug("Writing packet: " + bytes);
-//
-//        for (byte b:
-//             bytes) {
-//            log.debug("Byte: " + b);
-//        }
-        // Write bytes
         OutputStream out = socket.getOutputStream();
         out.write(bytes);
     }

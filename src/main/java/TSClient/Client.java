@@ -23,6 +23,7 @@ public class Client {
         byte[] input = new byte[0];
         byte[] firstPlay = new byte[6];
         firstPlay[0] = 0;
+        //Regex pattern for validating ip addrss
         final Pattern PATTERN = Pattern.compile(
                 "^(([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.){3}([01]?\\d\\d?|2[0-4]\\d|25[0-5])$");
 
@@ -36,6 +37,7 @@ public class Client {
         // Create socket that is connected to server on specified port
         Socket socket = new Socket(server, 50000);
 
+        //Game loop
         while (keepPlaying) {
             if(input.length == 0)
                 input = firstPlay;
@@ -47,20 +49,13 @@ public class Client {
             byte[] playerMove;
             byte[] response = new byte[6];
 
-//            if(gameStarted == true) {
-//                input = packet.read(socket);
-//                System.out.println("Am I even reading?");
-//            }
-//
-//            if(input.length != 0 || gameStarted == false) {
-//                System.out.println("Input shit: " + input[0]);
                 switch (input[0]) {
                     //Error received
                     case -1:
                         Log.debug("ERROR");
                         keepPlaying = false;
                         break;
-                    //New game
+                    //New game starts here
                     case 0:
                         board = new Board();
                         response[0] = 1;
@@ -102,8 +97,12 @@ public class Client {
                         board.endGame(input[1], input[2]);
                         byte playAgain = board.playSession();
                         if (playAgain == 1) {
-                            response[0] = 0;
-                            started = true;
+                            response[0] = 1;
+                            response[2] = 0;
+                            response[3] = 0;
+                            response[4] = 0;
+                            response[5] = 0;
+
                         }
                         else
                             response[0] = 3;
@@ -127,6 +126,7 @@ public class Client {
                         response[5] = 0;
                         packet.write(response, socket);
                         break;
+                    //Player invoked exit
                     case 4:
                         keepPlaying = false;
                         break;

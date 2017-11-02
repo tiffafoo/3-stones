@@ -198,12 +198,17 @@ public class Board {
     public byte playSession(){
         //Ask the user if they want to play again. Enter y for yes, n for no.
         System.out.println("Do you want to play again? 'y' to play. Any other key to exit");
-        keyBoard.next();
+        keyBoard.nextLine();
         String userChoice = keyBoard.nextLine();
 
         //If they chose yes, start a new game, otherwise, exit the loop.
-        if (userChoice.equalsIgnoreCase("y")){
+        System.out.println("User choice: " + userChoice);
+        if (userChoice.contains(("y")) || userChoice.contains("Y")){
             log.debug("Player says yes");
+            lastRow = 0;
+            lastCol = 0;
+            lastMove = "X";
+            fillClientBoard();
             return 1;
         }
         else{
