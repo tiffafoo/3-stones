@@ -35,6 +35,7 @@ public class Client {
             byte[] playerMove;
             byte[] response = new byte[5];
 
+
             switch (input[0]) {
                 //Error received
                 case -1:
@@ -100,7 +101,7 @@ public class Client {
                     response[4] = 0;
                     break;
             }
-            socket.close();                                // Close the socket and its streams
         }
+        socket.close();         // Close the socket and its streams
     }
 }
