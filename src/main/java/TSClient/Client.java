@@ -33,6 +33,9 @@ public class Client {
             if(input.length == 0)
                 input = firstPlay;
 
+            if(gameStarted)
+                input = packet.read(socket);
+
             byte[] playerMove;
             byte[] response = new byte[6];
 
@@ -40,7 +43,6 @@ public class Client {
                 input = packet.read(socket);
                 System.out.println("Am I even reading?");
             }
-
             System.out.println(input.length != 0);
             System.out.println(gameStarted == false);
             if(input.length != 0 || gameStarted == false) {
