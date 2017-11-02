@@ -2,6 +2,7 @@ package TSClient;
 
 import TSServer.Packet;
 import TSServer.game.Slot;
+import com.oracle.tools.packager.Log;
 
 import java.io.IOException;
 import java.net.Socket;
@@ -56,16 +57,14 @@ public class Client {
                 switch (input[0]) {
                     //Error received
                     case -1:
-                        System.out.println("ERROR");
+                        Log.debug("ERROR");
                         keepPlaying = false;
                         break;
                     //New game
                     case 0:
-                        System.out.println("I'm in zero");
                         board = new Board();
-                        board.showClientBoard();
                         response[0] = 1;
-                        playerMove = board.getPlayerMove();
+                        playerMove = board.startGame();
                         response[1] = playerMove[0];
                         response[2] = playerMove[1];
                         response[3] = 0;
@@ -75,11 +74,18 @@ public class Client {
                         break;
                     //Valid move was played and new piece played
                     case 1:
-                        System.out.println("response"+input[0]+input[1]+input[2]+input[3]+input[4]);
+                        if(input[5] == 4) {
+                            System.out.println("-------------------------");
+                            System.out.println("That's an invalid move. Try again.");
+                        }
                         if(input[3] != 0)
                             board.changeBoardPiece(input[3] - 1, input[4] - 1, Slot.HUMAN_MOVE);
-                        if(input[1] != 0)
+                        if(input[1] != 0) {
                             board.changeBoardPiece(input[1] - 2, input[2] - 2, Slot.COMPUTER_MOVE);
+                            System.out.println("-------------------------");
+                            System.out.println("Black played: (" +(input[1] - 1) +", " + (input[2] - 1) + ")");
+                            System.out.println("White to play");
+                        }
                         board.showClientBoard();
                         response[0] = 1;
                         playerMove = board.getPlayerMove();
@@ -92,11 +98,13 @@ public class Client {
                         break;
                     //End game
                     case 2:
-                        System.out.println("End Game");
+                        Log.debug("End Game");
                         board.endGame(input[1], input[2]);
                         byte playAgain = board.playSession();
-                        if (playAgain == 1)
+                        if (playAgain == 1) {
                             response[0] = 0;
+                            started = true;
+                        }
                         else
                             response[0] = 3;
                         response[1] = 0;
@@ -118,18 +126,6 @@ public class Client {
                         response[4] = 0;
                         response[5] = 0;
                         packet.write(response, socket);
-                        break;
-                    //Make a new valid play
-                    case 4:
-                        System.out.println("Your move was invalid, please play again");
-                        board.showClientBoard();
-                        playerMove = board.getPlayerMove();
-                        response[0] = 1;
-                        response[1] = playerMove[0];
-                        response[2] = playerMove[1];
-                        response[3] = 0;
-                        response[4] = 0;
-                        response[5] = 0;
                         break;
                 }
             }

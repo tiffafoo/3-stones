@@ -81,7 +81,7 @@ public class Server
                             response[2] = 0;
                             response[3] = 0;
                             response[4] = 0;
-                            response[5] = 1;
+                            response[5] = 4;
                             packet.write(response, clntSock);
                         }
                             break;

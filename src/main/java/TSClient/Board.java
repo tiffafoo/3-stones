@@ -138,14 +138,14 @@ public class Board {
      * Probably will be called when both the server and client are ready to play
      *
      */
-    public void startGame(){
+    public byte[] startGame(){
         log.debug("Game Start");
-        System.out.println("Welcome, here is the game board: \n");
+        System.out.println("Time to play some 3-stones: \n");
         //Uses the client 7x7 board to display results
         showClientBoard();
         System.out.println("Players turn!");
         //Get the player row and column choicce
-        getPlayerMove();
+        return getPlayerMove();
     }
 
     /**
@@ -170,7 +170,6 @@ public class Board {
                 while (!keyBoard.hasNextInt())
                     keyBoard.nextLine();
                 row = keyBoard.nextByte();
-                System.out.println("row test: "+ row);
             }
 
             System.out.println("Please select a column: ");
@@ -183,7 +182,6 @@ public class Board {
                 while (!keyBoard.hasNextInt())
                     keyBoard.nextLine();
                 col = keyBoard.nextByte();
-                System.out.println("col test: "+ col);
             }
         } catch (InputMismatchException i) {
             System.out.println("Let's try that again shall we.");
@@ -193,13 +191,14 @@ public class Board {
 
         move[0] = row;
         move[1] = col;
-        System.out.println("row:" + move[0] + "col:" + move[1]);
+
         return move;
     }
 
     public byte playSession(){
         //Ask the user if they want to play again. Enter y for yes, n for no.
-        System.out.println("Do you want to play again? (y/n)");
+        System.out.println("Do you want to play again? 'y' to play. Any other key to exit");
+        keyBoard.next();
         String userChoice = keyBoard.nextLine();
 
         //If they chose yes, start a new game, otherwise, exit the loop.

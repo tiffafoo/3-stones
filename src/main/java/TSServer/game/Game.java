@@ -115,6 +115,7 @@ public class Game{
     public boolean validatePiece(int row, int column, int lastRow, int lastColumn){
         log.debug("Validating piece: row-> " + row + " column-> " + column + "\nlastRow-> " + lastRow + " lastColumn->" + lastColumn);
         //Check if the it is the first move, check if the user placed it in the right spot.
+        //Check if the it is the first move, check if the user placed it in the right spot.
         if (piecesPlayed == 0 && gameBoard[row][column] == Slot.NOT_OCCUPIED)
             return true;
         if (piecesPlayed != 0){
