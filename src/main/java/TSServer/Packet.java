@@ -26,20 +26,7 @@ public class Packet {
     public byte[] read(Socket socket) throws IOException {
         InputStream in = socket.getInputStream();
         byte[] buffer = new byte[BUFSIZE];
-
-        int totalBytesRcvd = 0;
-        int bytesRcvd = 0;
-
-        // Continue reading until we have received
-        // the size expected
-        while (totalBytesRcvd < BUFSIZE) {
-            if ((bytesRcvd = in.read(buffer, totalBytesRcvd, BUFSIZE - totalBytesRcvd)) == -1) {
-                throw new IOException("Connection closed due to failure");
-            }
-            totalBytesRcvd += bytesRcvd;
-        }
-
-        log.debug("Received packet: " + buffer);
+        in.read(buffer);
 
         return buffer;
     }

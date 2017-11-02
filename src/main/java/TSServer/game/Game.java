@@ -67,6 +67,11 @@ public class Game{
 
         // validate, calculate points and add to globals
         log.debug(cellState.name());
+        if (cellState == Slot.HUMAN_MOVE) {
+            row += 1;
+            column += 1;
+        }
+
         if (validatePiece(row, column, lastRow, lastColumn)){
             innerBoard.add(row, column, cellState);
             //Add piece to the client board
@@ -146,6 +151,12 @@ public class Game{
         log.debug("Calculating points...");
         int scoreCounter = 0;
 
+        log.debug("Gameboard initial: " + gameBoard.length);
+        log.debug("LastRow: " + lastRow);
+        log.debug("Last Column: " + lastColumn);
+        log.debug("Gameboard initial thingy: " + gameBoard[lastRow + 1][lastColumn]);
+        log.debug("Gameboard thingy 2: " +  gameBoard[lastRow - 1][lastColumn]);
+
         // Check each lastRow, if full +1 point each
         if (gameBoard[lastRow + 1][lastColumn] == cellState && gameBoard[lastRow - 1][lastColumn] == cellState) {
             scoreCounter++;
@@ -208,8 +219,13 @@ public class Game{
         int bestColumnHolder = -1;
         Slot cellState = Slot.COMPUTER_MOVE;
 
+        log.debug("Getting computer move.");
+
         for(int i = 0; i < gameBoard.length; i++){
             if (validatePiece(i, lastColumn, lastRow, lastColumn)){
+                log.debug("Trying row: [" + i + "] and column: [" + lastColumn + "]");
+                bestRowHolder = i;
+                bestColumnHolder = lastColumn;
                 calculatedHolder = calculatePoints(bestRowHolder,bestColumnHolder, cellState);
                 if (calculatedHolder > scoreHolder){
                     scoreHolder = calculatedHolder;
@@ -219,6 +235,9 @@ public class Game{
             }
             
             if (validatePiece(lastRow, i, lastRow, lastColumn)){
+                bestRowHolder = lastRow;
+                bestColumnHolder = i;
+                log.debug("Trying row: [" + lastRow + "] and column: [" + i + "]");
                 calculatedHolder = calculatePoints(bestRowHolder,bestColumnHolder, cellState);
                 if (calculatedHolder > scoreHolder){
                     scoreHolder = calculatedHolder;
@@ -260,8 +279,8 @@ public class Game{
         //The piece is valid.
         while (!validatePiece(rdmRowHolder, rdmColumnHolder, lastRow, lastColumn)){
             //Gets a random space between 0 and 6 (7X7 game board), which will then be validated
-            rdmRowHolder = randomSpace.nextInt(6);
-            rdmColumnHolder = randomSpace.nextInt(6);
+            rdmRowHolder = randomSpace.nextInt(7)+1;
+            rdmColumnHolder = randomSpace.nextInt(7)+1;
         }
         //Will only arrive here if the random piece is valid, so add to board!
         log.debug("Random Row: " + rdmRowHolder + " Random Column: " + rdmColumnHolder);
