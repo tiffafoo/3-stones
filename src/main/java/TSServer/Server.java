@@ -2,6 +2,8 @@ package TSServer;
 
 import TSServer.game.Game;
 import TSServer.game.Slot;
+import com.oracle.tools.packager.Log;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -11,6 +13,7 @@ import java.net.Socket;
 public class Server
 {
     private static final int BUFSIZE = 32;	// Size of receive buffer
+    private final org.slf4j.Logger log = LoggerFactory.getLogger(this.getClass().getName());
 
     public static void main(String[] args) throws IOException
     {
@@ -28,7 +31,6 @@ public class Server
             // Get client connection
             Socket clntSock = servSock.accept();
 
-            // TODO: TSServer.playSessions;
 
             System.out.println("Handling client at " +
                     clntSock.getInetAddress().getHostAddress() + " on port " +
@@ -36,35 +38,34 @@ public class Server
 
 
             // Receive until client closes connection, indicated by -1 return
-            // TODO: Should while conditional be checking that the opcode is not -1? -> Handle in switch
             while (keepPlaying) {
                 byte[] input = packet.read(clntSock);
-                byte[] response = new byte[10];
+                byte[] response = new byte[5];
 
                 if(!(input.length == 0)){
                     switch (input[0]) {
+                        //Start a new game
                         case 0: game = new Game();
+                            Log.debug("Starting a new game here");
                             response[0] = 0;
-                            packet.write(response, clntSock);
-                            break;
-                        case 1: response[0] = 1;
-                            response[1] = game.getPlayerPoints();
-                            response[2] = game.getCompPoints();
+                            response[1] = 0;
+                            response[2] = 0;
                             response[3] = 0;
                             response[4] = 0;
                             packet.write(response, clntSock);
                             break;
-                        case 2: if(game.addPiece(input[1], input[2], Slot.HUMAN_MOVE)) {
-                            game.addPiece(input[1], input[2], Slot.HUMAN_MOVE);
-                            response[0] = 2;
-                            byte[] move = game.getNextMove();
-                            response[1] = move[0];
-                            response[2] = move[1];
+                        //Validate player move. If good play it, else respond 4 > Invalid move
+                        case 1: boolean validate = game.addPiece(input[1], input[2], Slot.HUMAN_MOVE);
+                            if(validate) {
+                            response[0] = 1;
+                            byte[] compMove = game.getNextMove();
+                            response[1] = compMove[0];
+                            response[2] = compMove[1];
                             response[3] = input[1];
                             response[4] = input[2];
                             packet.write(response, clntSock);
-                            }
-                            else {
+                        }
+                        else {
                             response[0] = 4;
                             response[1] = 0;
                             response[2] = 0;
@@ -73,13 +74,19 @@ public class Server
                             packet.write(response, clntSock);
                         }
                             break;
+                        case 2: response[0] = 1;
+                            response[1] = game.getPlayerPoints();
+                            response[2] = game.getCompPoints();
+                            response[3] = 0;
+                            response[4] = 0;
+                            packet.write(response, clntSock);
+                            break;
                         case 3:
                             response[0] = 3;
                             response[1] = 0;
                             response[2] = 0;
                             response[3] = 0;
                             response[4] = 0;
-                            keepPlaying = false;
                             break;
                     }
                 }

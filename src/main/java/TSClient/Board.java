@@ -144,7 +144,7 @@ public class Board {
      * 
      */
     public byte[] getPlayerMove(){
-        byte row = 0, col = 0;
+        byte row, col;
         byte[] move = new byte[2];
         
         System.out.println("Please select a row: ");

@@ -63,7 +63,7 @@ public class Game{
      */
     public boolean addPiece(int row, int column, Slot cellState) {
         // Either while loop or check with other side
-        log.debug("Attempting to adding piece: row ->" + row + " column->" + column);
+        log.debug("Attempting to add piece at: row ->" + row + " column->" + column);
 
         // validate, calculate points and add to globals
         log.debug(cellState.name());
@@ -71,7 +71,7 @@ public class Game{
             row += 1;
             column += 1;
         }
-
+        log.debug("Validation output: " + validatePiece(row, column, lastRow, lastColumn));
         if (validatePiece(row, column, lastRow, lastColumn)){
             innerBoard.add(row, column, cellState);
             //Add piece to the client board
@@ -80,9 +80,9 @@ public class Game{
             lastRow = row;
             piecesPlayed++;
             
-            if (cellState == Slot.COMPUTER_MOVE) 
+            if (cellState == Slot.COMPUTER_MOVE && piecesPlayed > 6)
                 compPoints += calculatePoints(row, column, cellState);
-            else 
+            else if (cellState == Slot.HUMAN_MOVE && piecesPlayed > 6)
                 playerPoints += calculatePoints(row, column, cellState);
             
             //clientBoard.showClientBoard();
@@ -93,8 +93,6 @@ public class Game{
            // so if you are here, then the human made an invalid move, so 
            // let them try again.
            if(cellState == Slot.HUMAN_MOVE){
-                //System.out.println("Invalid move, please try again!");
-                //clientBoard.getPlayerMove();
                 return false;
            }
            return true;
