@@ -68,8 +68,8 @@ public class Client {
                         break;
                     //Valid move was played and new piece played
                     case 1:
-                        board.changeBoardPiece(input[3], input[4], Slot.HUMAN_MOVE);
-                        board.changeBoardPiece(input[1], input[2], Slot.COMPUTER_MOVE);
+                        board.changeBoardPiece(input[3] - 1, input[4] - 1, Slot.HUMAN_MOVE);
+                        board.changeBoardPiece(input[1] - 2, input[2] - 2, Slot.COMPUTER_MOVE);
                         board.showClientBoard();
                         response[0] = 1;
                         playerMove = board.getPlayerMove();
@@ -111,6 +111,7 @@ public class Client {
                     //Make a new valid play
                     case 4:
                         System.out.println("Your move was invalid, please play again");
+                        board.showClientBoard();
                         playerMove = board.getPlayerMove();
                         response[0] = 1;
                         response[1] = playerMove[0];
