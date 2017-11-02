@@ -10,11 +10,11 @@ import org.slf4j.LoggerFactory;
  * Class responsible for the 3-Stones game logic. It will start a new game, 
  * get user input, validate user input, make the computer find the best choice 
  * move a piece and calculate total points.
- * 
+ *
  * @author Tiffany Le-Nguyen
  * @author Trevor Eames
  * @author Alessandro Ciotola
- * 
+ *
  */
 public class Game{
     private final org.slf4j.Logger log = LoggerFactory.getLogger(this.getClass().getName());
@@ -26,7 +26,7 @@ public class Game{
     private Slot[][] gameBoard;
     private int playerPoints = 0;
     private int compPoints = 0;
-    private Scanner keyBoard = new Scanner(System.in);    
+    private Scanner keyBoard = new Scanner(System.in);
 
     /**
      * Constructor
@@ -36,6 +36,14 @@ public class Game{
         //clientBoard = new Board();
         innerBoard = new InnerBoard();
         gameBoard = innerBoard.getBoardArray();
+    }
+
+    /**
+     * Get current amount of pieces played
+     * @return amount of pieces
+     */
+    public byte getPiecesPlayed() {
+        return (byte) piecesPlayed;
     }
 
     /**
@@ -56,7 +64,7 @@ public class Game{
 
     /**
      * Add a piece to the boardArray
-     * 
+     *
      * @param row
      * @param column
      * @param cellState
@@ -88,7 +96,8 @@ public class Game{
         }
 
         return false;
-    }    
+    }
+
 
     /**
      * Validate the move, follows the rules of
@@ -104,19 +113,19 @@ public class Game{
      * @return true if valid, false if not
      */
     public boolean validatePiece(int row, int column, int lastRow, int lastColumn){
-        log.debug("Validating piece: row-> " + row + " column-> " + column + "\nlastRow-> " + lastRow + " lastColumn->" + lastColumn);        
+        log.debug("Validating piece: row-> " + row + " column-> " + column + "\nlastRow-> " + lastRow + " lastColumn->" + lastColumn);
         //Check if the it is the first move, check if the user placed it in the right spot.
         if (piecesPlayed == 0 && gameBoard[row][column] == Slot.NOT_OCCUPIED)
             return true;
         if (piecesPlayed != 0){
             // Slot is empty and either the row or column is the same
-            if (gameBoard[row][column] == Slot.NOT_OCCUPIED && (row == lastRow || column == lastColumn)) 
+            if (gameBoard[row][column] == Slot.NOT_OCCUPIED && (row == lastRow || column == lastColumn))
                 return true;
             else {
                 // Checks if there is a free adjacent cell that the player
                 // Could have placed his piece in. If not, the move is valid.
                 for (int i = 0; i < gameBoard.length; i++){
-                    if (gameBoard[lastRow][i] == Slot.NOT_OCCUPIED || gameBoard[i][lastColumn] == Slot.NOT_OCCUPIED) 
+                    if (gameBoard[lastRow][i] == Slot.NOT_OCCUPIED || gameBoard[i][lastColumn] == Slot.NOT_OCCUPIED)
                         return false;
                 }
                 // User's move was valid because no space around last played piece
@@ -134,7 +143,7 @@ public class Game{
      * @param lastRow
      * @param lastColumn
      * @param cellState
-     * @return 
+     * @return
      */
     public int calculatePoints(int lastRow, int lastColumn, Slot cellState) {
         log.debug("Calculating points...");
@@ -195,7 +204,7 @@ public class Game{
      * Method which will find the position on the board that is valid and will
      * produce the highest result. This will be the computers move. If no moves
      * are possible, find an empty valid position.
-     * 
+     *
      */
     public byte[] getNextMove(){
         byte[] move = new byte[2];
@@ -207,7 +216,7 @@ public class Game{
 
         log.debug("Getting computer move.");
 
-        for(int i = 0; i < gameBoard.length; i++){
+        for(int i = 1; i < gameBoard.length - 1; i++){
             if (validatePiece(i, lastColumn, lastRow, lastColumn)){
                 log.debug("Trying row: [" + i + "] and column: [" + lastColumn + "]");
 
@@ -218,7 +227,7 @@ public class Game{
                     bestColumnHolder = lastColumn;
                 }
             }
-            
+
             if (validatePiece(lastRow, i, lastRow, lastColumn)){
 
                 log.debug("Trying row: [" + lastRow + "] and column: [" + i + "]");
@@ -230,7 +239,7 @@ public class Game{
                     bestColumnHolder = i;
                 }
             }
-            
+
         }
         if(bestRowHolder != -1){
             log.debug("Best Row: " + bestRowHolder + " Best Column: " + bestColumnHolder);
@@ -244,22 +253,22 @@ public class Game{
             return move;
         }
     }
-    
+
     /**
      * Method which will randomly generate numbers for the row and column. If the
      * number is valid, add the piece to the board.
-     * 
-     * @param cellState 
-     * @return  
+     *
+     * @param cellState
+     * @return
      */
     public byte[] getRandomSpot(Slot cellState){
         //Get a random number generator
-        Random randomSpace = new Random();    
+        Random randomSpace = new Random();
         byte[] move = new byte[2];
         //Make 2 variables to hold the random numbers. I set them to 0 because
         //at position [0,0] the space should always be FORBIDDEN_SPACE.                
-        int rdmRowHolder = 0, rdmColumnHolder = 0;        
-        
+        int rdmRowHolder = 0, rdmColumnHolder = 0;
+
         //Keep finding a random spot until it is valid. Will only exit the loop when
         //The piece is valid.
         while (!validatePiece(rdmRowHolder, rdmColumnHolder, lastRow, lastColumn)){

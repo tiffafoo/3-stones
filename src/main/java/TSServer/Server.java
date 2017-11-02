@@ -2,8 +2,6 @@ package TSServer;
 
 import TSServer.game.Game;
 import TSServer.game.Slot;
-//import com.oracle.tools.packager.Log;
-import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -12,7 +10,6 @@ import java.net.Socket;
 // Given by teacher
 public class Server
 {
-    private final org.slf4j.Logger log = LoggerFactory.getLogger(this.getClass().getName());
 
     public static void main(String[] args) throws IOException
     {
@@ -55,19 +52,31 @@ public class Server
                             packet.write(response, clntSock);
                             break;
                         //Validate player move. If good play it, else respond 4 > Invalid move
-                        case 1: boolean validate = game.addPiece(input[1], input[2], Slot.HUMAN_MOVE);
+                        case 1: System.out.println("Pieces played: " + game.getPiecesPlayed());
+                            boolean validate = game.addPiece(input[1], input[2], Slot.HUMAN_MOVE);
                             if(validate) {
-                            response[0] = 1;
-                            byte[] compMove = game.getNextMove();
-                            response[1] = compMove[0];
-                            response[2] = compMove[1];
-                            response[3] = input[1];
-                            response[4] = input[2];
-                            response[5] = 1;
-                            packet.write(response, clntSock);
+                                if(game.getPiecesPlayed() >= 30) {
+                                    response[0] = 2;
+                                    response[1] = game.getPlayerPoints();
+                                    response[2] = game.getCompPoints();
+                                    response[3] = 0;
+                                    response[4] = 0;
+                                    response[5] = 1;
+                                }
+                                else {
+                                    response[0] = 1;
+                                    byte[] compMove = game.getNextMove();
+                                    response[1] = compMove[0];
+                                    response[2] = compMove[1];
+                                    response[3] = input[1];
+                                    response[4] = input[2];
+                                    response[5] = 1;
+                                }
+                                packet.write(response, clntSock);
+                                break;
                         }
-                        else {
-                            response[0] = 4;
+                        else  {
+                            response[0] = 1;
                             response[1] = 0;
                             response[2] = 0;
                             response[3] = 0;
@@ -91,6 +100,7 @@ public class Server
                             response[3] = 0;
                             response[4] = 0;
                             response[5] = 1;
+                            packet.write(response, clntSock);
                             break;
                     }
                 }

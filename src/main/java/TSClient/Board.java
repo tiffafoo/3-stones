@@ -2,6 +2,7 @@ package TSClient;
 
 import TSServer.game.Slot;
 import java.lang.reflect.Array;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import org.slf4j.LoggerFactory;
 
@@ -153,20 +154,46 @@ public class Board {
      *
      */
     public byte[] getPlayerMove(){
-        byte row, col;
+        byte row = 0, col = 0;
         byte[] move = new byte[2];
+        byte min = 1;
+        byte max = 7;
 
-        System.out.println("Please select a row: ");
-        while (!keyBoard.hasNextInt())
+        try {
+            System.out.println("Please select a row: ");
+            while (!keyBoard.hasNextInt())
+                keyBoard.next();
+            row = keyBoard.nextByte();
+
+            while (row < min || row > max) {
+                System.out.println("Please select a valid row: ");
+                while (!keyBoard.hasNextInt())
+                    keyBoard.nextLine();
+                row = keyBoard.nextByte();
+                System.out.println("row test: "+ row);
+            }
+
+            System.out.println("Please select a column: ");
+            while (!keyBoard.hasNextInt())
+                keyBoard.next();
+            col = keyBoard.nextByte();
+
+            while (col < min || col > max) {
+                System.out.println("Please select a valid row: ");
+                while (!keyBoard.hasNextInt())
+                    keyBoard.nextLine();
+                col = keyBoard.nextByte();
+                System.out.println("col test: "+ col);
+            }
+        } catch (InputMismatchException i) {
+            System.out.println("Let's try that again shall we.");
             keyBoard.next();
-        row = keyBoard.nextByte();
-        System.out.println("Please select a column: ");
-        while (!keyBoard.hasNextInt())
-            keyBoard.next();
-        col = keyBoard.nextByte();
+            getPlayerMove();
+        }
 
         move[0] = row;
         move[1] = col;
+        System.out.println("row:" + move[0] + "col:" + move[1]);
         return move;
     }
 
