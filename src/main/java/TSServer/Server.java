@@ -1,32 +1,25 @@
 package TSServer;
 
-//import jdk.internal.util.xml.impl.Input;
+import TSServer.game.Game;
+import TSServer.game.Slot;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
 // Given by teacher
 public class Server
 {
-    private static final int BUFSIZE = 32;	// Size of receive buffer
 
     public static void main(String[] args) throws IOException
     {
-
-        if (args.length != 1)					// Test for correct # of args
-            throw new IllegalArgumentException("Parameter(s): <Port>");
-
-        int servPort = Integer.parseInt(args[0]);
+        int servPort = 50000;
 
         // Create a server socket to accept client connection requests
         ServerSocket servSock = new ServerSocket(servPort);
-
-        // Size of received message
-        int recvMsgSize;
-        byte[] byteBuffer = new byte[BUFSIZE];	// Receive buffer
+        Packet packet = new Packet();
+        Game game = new Game();
+        Boolean keepPlaying = true;
 
         // Run forever, accepting and servicing connections
         for (;;)
@@ -34,19 +27,88 @@ public class Server
             // Get client connection
             Socket clntSock = servSock.accept();
 
-            // TODO: TSServer.playSessions;
 
             System.out.println("Handling client at " +
                     clntSock.getInetAddress().getHostAddress() + " on port " +
                     clntSock.getPort());
 
-            InputStream in = clntSock.getInputStream();
-            OutputStream out = clntSock.getOutputStream();
 
             // Receive until client closes connection, indicated by -1 return
-            while ((recvMsgSize = in.read(byteBuffer)) != -1) {
-                out.write(byteBuffer, 0, recvMsgSize);
+            while (keepPlaying) {
+                byte[] input = packet.read(clntSock);
+                byte[] response = new byte[6];
+
+                if(!(input.length == 0)){
+                    switch (input[0]) {
+                        //Start a new game
+                        case 0: game = new Game();
+                            //Log.debug("Starting a new game here");
+                            response[0] = 0;
+                            response[1] = 0;
+                            response[2] = 0;
+                            response[3] = 0;
+                            response[4] = 0;
+                            response[5] = 1;
+                            packet.write(response, clntSock);
+                            break;
+                        //Validate player move. If good, play it, else respond with invalid see 2nd else
+                        case 1: System.out.println("Pieces played: " + game.getPiecesPlayed());
+                            boolean validate = game.addPiece(input[1], input[2], Slot.HUMAN_MOVE);
+                            if(validate) {
+                                if(game.getPiecesPlayed() >= 30) {
+                                    response[0] = 2;
+                                    response[1] = game.getPlayerPoints();
+                                    response[2] = game.getCompPoints();
+                                    response[3] = 0;
+                                    response[4] = 0;
+                                    response[5] = 1;
+                                }
+                                else {
+                                    response[0] = 1;
+                                    byte[] compMove = game.getNextMove();
+                                    response[1] = compMove[0];
+                                    response[2] = compMove[1];
+                                    response[3] = input[1];
+                                    response[4] = input[2];
+                                    response[5] = 1;
+                                }
+                                packet.write(response, clntSock);
+                                break;
+                        }
+                        else  {
+                            response[0] = 1;
+                            response[1] = 0;
+                            response[2] = 0;
+                            response[3] = 0;
+                            response[4] = 0;
+                            response[5] = 4;
+                            packet.write(response, clntSock);
+                        }
+                            break;
+                        //Game ended naturally
+                        case 2: response[0] = 1;
+                            response[1] = game.getPlayerPoints();
+                            response[2] = game.getCompPoints();
+                            response[3] = 0;
+                            response[4] = 0;
+                            response[5] = 1;
+                            packet.write(response, clntSock);
+                            break;
+                        //Player wants to end game
+                        case 3:
+                            response[0] = 4;
+                            response[1] = 0;
+                            response[2] = 0;
+                            response[3] = 0;
+                            response[4] = 0;
+                            response[5] = 1;
+                            keepPlaying = false;
+                            packet.write(response, clntSock);
+                            break;
+                    }
+                }
             }
+            game = new Game();
             // Close the socket. This client is finished.
             clntSock.close();
         }
