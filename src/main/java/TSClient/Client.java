@@ -17,6 +17,7 @@ public class Client {
         Board board = new Board();
         Scanner reader = new Scanner(System.in);
         Boolean keepPlaying = true;
+        Boolean started = true;
         byte[] input = new byte[0];
         byte[] firstPlay = new byte[5];
         firstPlay[0] = 0;
@@ -31,6 +32,9 @@ public class Client {
         while (keepPlaying) {
             if(input.length == 0)
                 input = firstPlay;
+            if(!started)
+                input = packet.read(socket);
+            started = false;
 
             byte[] playerMove;
             byte[] response = new byte[5];
@@ -56,7 +60,9 @@ public class Client {
                     packet.write(response, socket);
                     break;
                 //Valid move was played and new piece played
-                case 1:  board.changeBoardPiece(input[3], input[4], Slot.HUMAN_MOVE);
+                case 1: 
+                    System.out.println("CHANGEBOARD");
+                    board.changeBoardPiece(input[3], input[4], Slot.HUMAN_MOVE);
                     board.changeBoardPiece(input[1], input[2], Slot.COMPUTER_MOVE);
                     board.showClientBoard();
                     response[0] = 1;

@@ -2,7 +2,7 @@ package TSServer;
 
 import TSServer.game.Game;
 import TSServer.game.Slot;
-import com.oracle.tools.packager.Log;
+//import com.oracle.tools.packager.Log;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
@@ -46,7 +46,7 @@ public class Server
                     switch (input[0]) {
                         //Start a new game
                         case 0: game = new Game();
-                            Log.debug("Starting a new game here");
+                            //Log.debug("Starting a new game here");
                             response[0] = 0;
                             response[1] = 0;
                             response[2] = 0;
