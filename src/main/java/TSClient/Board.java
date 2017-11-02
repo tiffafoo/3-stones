@@ -19,7 +19,10 @@ public class Board {
     private Scanner keyBoard = new Scanner(System.in);    
     private String[][] gameBoard = new String[7][7]; 
     public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_BLACK = "\u001B[30m";
     public static final String ANSI_RED = "\u001B[31m";
+    private int lastRow = 0, lastCol = 0;
+    private String lastMove = "X";
     
     /**
      * No parameter constructor which calls the fillClientBoard method to fill the
@@ -119,7 +122,13 @@ public class Board {
             move = "B";
         if(cellState == Slot.HUMAN_MOVE)
             move = "W";
+                
+        gameBoard[lastRow][lastCol] = ANSI_BLACK + lastMove + ANSI_RESET;
         gameBoard[row][col] = ANSI_RED + move + ANSI_RESET;
+        
+        lastMove = move;
+        lastRow = row;
+        lastCol = col;
     }
     
     /**
