@@ -62,8 +62,8 @@ public class Client {
                 //Valid move was played and new piece played
                 case 1: 
                     System.out.println("CHANGEBOARD");
-                    board.changeBoardPiece(input[3], input[4], Slot.HUMAN_MOVE);
-                    board.changeBoardPiece(input[1], input[2], Slot.COMPUTER_MOVE);
+                    board.changeBoardPiece(input[3] - 1, input[4] - 1, Slot.HUMAN_MOVE);
+                    board.changeBoardPiece(input[1] - 2, input[2] - 2, Slot.COMPUTER_MOVE);
                     board.showClientBoard();
                     response[0] = 1;
                     playerMove = board.getPlayerMove();
@@ -105,6 +105,7 @@ public class Client {
                     response[2] = playerMove[1];
                     response[3] = 0;
                     response[4] = 0;
+                    packet.write(response, socket);
                     break;
             }
         }

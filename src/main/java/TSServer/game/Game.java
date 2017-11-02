@@ -70,33 +70,24 @@ public class Game{
         if (cellState == Slot.HUMAN_MOVE) {
             row += 1;
             column += 1;
-        }
-        log.debug("Validation output: " + validatePiece(row, column, lastRow, lastColumn));
-        if (validatePiece(row, column, lastRow, lastColumn)){
+            if (validatePiece(row, column, lastRow, lastColumn)) {
+                innerBoard.add(row, column, cellState);
+                lastColumn = column;
+                lastRow = row;
+                piecesPlayed++;
+                playerPoints += calculatePoints(row, column, cellState);
+                return true;
+            }
+        } else if (cellState == Slot.COMPUTER_MOVE) {
             innerBoard.add(row, column, cellState);
-            //Add piece to the client board
-            //clientBoard.changeBoardPiece(row - 2, column - 2, cellState);
             lastColumn = column;
             lastRow = row;
             piecesPlayed++;
-            
-            if (cellState == Slot.COMPUTER_MOVE && piecesPlayed > 6)
-                compPoints += calculatePoints(row, column, cellState);
-            else if (cellState == Slot.HUMAN_MOVE && piecesPlayed > 6)
-                playerPoints += calculatePoints(row, column, cellState);
-            
-            //clientBoard.showClientBoard();
+            compPoints += calculatePoints(row, column, cellState);
             return true;
-        } 
-        else{
-           // Computer will constantly look for a new piece until it's valid,
-           // so if you are here, then the human made an invalid move, so 
-           // let them try again.
-           if(cellState == Slot.HUMAN_MOVE){
-                return false;
-           }
-           return true;
         }
+
+        return false;
     }    
 
     /**
@@ -149,11 +140,8 @@ public class Game{
         log.debug("Calculating points...");
         int scoreCounter = 0;
 
-        log.debug("Gameboard initial: " + gameBoard.length);
         log.debug("LastRow: " + lastRow);
         log.debug("Last Column: " + lastColumn);
-        log.debug("Gameboard initial thingy: " + gameBoard[lastRow + 1][lastColumn]);
-        log.debug("Gameboard thingy 2: " +  gameBoard[lastRow - 1][lastColumn]);
 
         // Check each lastRow, if full +1 point each
         if (gameBoard[lastRow + 1][lastColumn] == cellState && gameBoard[lastRow - 1][lastColumn] == cellState) {
@@ -222,25 +210,24 @@ public class Game{
         for(int i = 0; i < gameBoard.length; i++){
             if (validatePiece(i, lastColumn, lastRow, lastColumn)){
                 log.debug("Trying row: [" + i + "] and column: [" + lastColumn + "]");
-                bestRowHolder = i;
-                bestColumnHolder = lastColumn;
-                calculatedHolder = calculatePoints(bestRowHolder,bestColumnHolder, cellState);
-                if (calculatedHolder > scoreHolder){
+
+                calculatedHolder = calculatePoints(i,lastColumn, cellState);
+                if (calculatedHolder >= scoreHolder){
                     scoreHolder = calculatedHolder;
-                    bestRowHolder = lastRow + 1;
+                    bestRowHolder = i;
                     bestColumnHolder = lastColumn;
                 }
             }
             
             if (validatePiece(lastRow, i, lastRow, lastColumn)){
-                bestRowHolder = lastRow;
-                bestColumnHolder = i;
+
                 log.debug("Trying row: [" + lastRow + "] and column: [" + i + "]");
-                calculatedHolder = calculatePoints(bestRowHolder,bestColumnHolder, cellState);
-                if (calculatedHolder > scoreHolder){
+
+                calculatedHolder = calculatePoints(lastRow,i, cellState);
+                if (calculatedHolder >= scoreHolder){
                     scoreHolder = calculatedHolder;
-                    bestRowHolder = lastRow + 1;
-                    bestColumnHolder = lastColumn;
+                    bestRowHolder = lastRow;
+                    bestColumnHolder = i;
                 }
             }
             
