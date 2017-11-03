@@ -103,7 +103,8 @@ public class Client {
                         board.endGame(input[1], input[2]);
                         byte playAgain = board.playSession();
                         if (playAgain == 1) {
-                            response[0] = 1;
+                            response[0] = 0;
+                            response[1] = 0;
                             response[2] = 0;
                             response[3] = 0;
                             response[4] = 0;
@@ -125,10 +126,9 @@ public class Client {
                         break;
                     //Restart the game and play first move
                     case 3:
-                        board = new Board();
-                        board.startGame();
+                    	board = new Board();
                         response[0] = 1;
-                        playerMove = board.getPlayerMove();
+                        playerMove = board.startGame();
                         response[1] = playerMove[0];
                         response[2] = playerMove[1];
                         response[3] = 0;

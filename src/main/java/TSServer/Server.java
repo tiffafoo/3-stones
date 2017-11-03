@@ -104,17 +104,16 @@ public class Server
                             response[7] = 0;
                             packet.write(response, clntSock);
                             break;
-                        //Player wants to end game
+                        //Player wants to play again
                         case 3:
-                            response[0] = 4;
+                            response[0] = 0;
                             response[1] = 0;
                             response[2] = 0;
                             response[3] = 0;
                             response[4] = 0;
-                            response[5] = 1;
+                            response[5] = 0;
                             response[6] = 0;
                             response[7] = 0;
-                            keepPlaying = false;
                             packet.write(response, clntSock);
                             break;
                     }
