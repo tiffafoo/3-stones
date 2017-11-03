@@ -157,7 +157,7 @@ public class Game{
             scoreCounter++;
         }
         // Check each lastColumn, if full +1 point each
-        if (gameBoard[lastRow][lastColumn + 1] == cellState && gameBoard[lastRow][lastColumn + 1] == cellState) {
+        if (gameBoard[lastRow][lastColumn + 1] == cellState && gameBoard[lastRow][lastColumn - 1] == cellState) {
             scoreCounter++;
         }
         // Check first diagonal, if full +1 point each
@@ -170,21 +170,21 @@ public class Game{
             scoreCounter++;
         }
 
-        // Check at 2nd other thingy left and right
+        // Check at 2nd left and right
+        if (gameBoard[lastRow][lastColumn - 1] == cellState && gameBoard[lastRow][lastColumn - 2] == cellState) {
+            scoreCounter++;
+        }
+
+        if (gameBoard[lastRow][lastColumn + 1] == cellState && gameBoard[lastRow ][lastColumn + 2] == cellState) {
+            scoreCounter++;
+        }
+
+        // Check 2nd top and bottom
         if (gameBoard[lastRow + 1][lastColumn] == cellState && gameBoard[lastRow + 2][lastColumn] == cellState) {
             scoreCounter++;
         }
 
         if (gameBoard[lastRow - 1][lastColumn] == cellState && gameBoard[lastRow - 2][lastColumn] == cellState) {
-            scoreCounter++;
-        }
-
-        // Check 2nd top and bottom
-        if (gameBoard[lastRow + 1][lastColumn + 1] == cellState && gameBoard[lastRow + 2][lastColumn + 2] == cellState) {
-            scoreCounter++;
-        }
-
-        if (gameBoard[lastRow - 1][lastColumn - 1] == cellState && gameBoard[lastRow - 2][lastColumn - 2] == cellState) {
             scoreCounter++;
         }
 
@@ -194,6 +194,14 @@ public class Game{
         }
 
         if (gameBoard[lastRow - 1][lastColumn + 1] == cellState && gameBoard[lastRow - 2][lastColumn + 2] == cellState) {
+            scoreCounter++;
+        }
+        
+        if (gameBoard[lastRow + 1][lastColumn + 1] == cellState && gameBoard[lastRow + 2][lastColumn + 2] == cellState) {
+            scoreCounter++;
+        }
+
+        if (gameBoard[lastRow - 1][lastColumn - 1] == cellState && gameBoard[lastRow - 2][lastColumn - 2] == cellState) {
             scoreCounter++;
         }
 

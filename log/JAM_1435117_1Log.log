@@ -30282,3 +30282,492 @@ lastRow-> 5 lastColumn->7
 [DEBUG] 2017-11-02 20:19:29.198 [main] Game - LastRow: 5
 [DEBUG] 2017-11-02 20:19:29.198 [main] Game - Last Column: 3
 [DEBUG] 2017-11-02 20:23:06.613 [main] Game - Game Constructor
+[DEBUG] 2017-11-02 20:38:31.385 [main] Game - Game Constructor
+[DEBUG] 2017-11-02 20:38:54.989 [main] Game - Attempting to add piece at: row ->3 column->1
+[DEBUG] 2017-11-02 20:38:54.989 [main] Game - HUMAN_MOVE
+[DEBUG] 2017-11-02 20:38:54.989 [main] Game - Validating piece: row-> 4 column-> 2
+lastRow-> -1 lastColumn->-1
+[DEBUG] 2017-11-02 20:38:54.989 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:38:54.989 [main] Game - LastRow: 4
+[DEBUG] 2017-11-02 20:38:54.989 [main] Game - Last Column: 2
+[DEBUG] 2017-11-02 20:38:54.989 [main] Game - Getting computer move.
+[DEBUG] 2017-11-02 20:38:54.989 [main] Game - Validating piece: row-> 1 column-> 2
+lastRow-> 4 lastColumn->2
+[DEBUG] 2017-11-02 20:38:54.990 [main] Game - Validating piece: row-> 4 column-> 1
+lastRow-> 4 lastColumn->2
+[DEBUG] 2017-11-02 20:38:54.990 [main] Game - Validating piece: row-> 2 column-> 2
+lastRow-> 4 lastColumn->2
+[DEBUG] 2017-11-02 20:38:54.990 [main] Game - Validating piece: row-> 4 column-> 2
+lastRow-> 4 lastColumn->2
+[DEBUG] 2017-11-02 20:38:54.990 [main] Game - Validating piece: row-> 3 column-> 2
+lastRow-> 4 lastColumn->2
+[DEBUG] 2017-11-02 20:38:54.990 [main] Game - Validating piece: row-> 4 column-> 3
+lastRow-> 4 lastColumn->2
+[DEBUG] 2017-11-02 20:38:54.990 [main] Game - Trying row: [4] and column: [3]
+[DEBUG] 2017-11-02 20:38:54.990 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:38:54.990 [main] Game - LastRow: 4
+[DEBUG] 2017-11-02 20:38:54.990 [main] Game - Last Column: 3
+[DEBUG] 2017-11-02 20:38:54.990 [main] Game - Validating piece: row-> 4 column-> 2
+lastRow-> 4 lastColumn->2
+[DEBUG] 2017-11-02 20:38:54.990 [main] Game - Validating piece: row-> 4 column-> 4
+lastRow-> 4 lastColumn->2
+[DEBUG] 2017-11-02 20:38:54.990 [main] Game - Trying row: [4] and column: [4]
+[DEBUG] 2017-11-02 20:38:54.991 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:38:54.991 [main] Game - LastRow: 4
+[DEBUG] 2017-11-02 20:38:54.991 [main] Game - Last Column: 4
+[DEBUG] 2017-11-02 20:38:54.991 [main] Game - Validating piece: row-> 5 column-> 2
+lastRow-> 4 lastColumn->2
+[DEBUG] 2017-11-02 20:38:54.991 [main] Game - Trying row: [5] and column: [2]
+[DEBUG] 2017-11-02 20:38:54.991 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:38:54.991 [main] Game - LastRow: 5
+[DEBUG] 2017-11-02 20:38:54.991 [main] Game - Last Column: 2
+[DEBUG] 2017-11-02 20:38:54.991 [main] Game - Validating piece: row-> 4 column-> 5
+lastRow-> 4 lastColumn->2
+[DEBUG] 2017-11-02 20:38:54.991 [main] Game - Trying row: [4] and column: [5]
+[DEBUG] 2017-11-02 20:38:54.991 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:38:54.991 [main] Game - LastRow: 4
+[DEBUG] 2017-11-02 20:38:54.991 [main] Game - Last Column: 5
+[DEBUG] 2017-11-02 20:38:54.991 [main] Game - Validating piece: row-> 6 column-> 2
+lastRow-> 4 lastColumn->2
+[DEBUG] 2017-11-02 20:38:54.992 [main] Game - Trying row: [6] and column: [2]
+[DEBUG] 2017-11-02 20:38:54.992 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:38:54.992 [main] Game - LastRow: 6
+[DEBUG] 2017-11-02 20:38:54.992 [main] Game - Last Column: 2
+[DEBUG] 2017-11-02 20:38:54.992 [main] Game - Validating piece: row-> 4 column-> 6
+lastRow-> 4 lastColumn->2
+[DEBUG] 2017-11-02 20:38:54.992 [main] Game - Trying row: [4] and column: [6]
+[DEBUG] 2017-11-02 20:38:54.992 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:38:54.992 [main] Game - LastRow: 4
+[DEBUG] 2017-11-02 20:38:54.992 [main] Game - Last Column: 6
+[DEBUG] 2017-11-02 20:38:54.992 [main] Game - Validating piece: row-> 7 column-> 2
+lastRow-> 4 lastColumn->2
+[DEBUG] 2017-11-02 20:38:54.992 [main] Game - Validating piece: row-> 4 column-> 7
+lastRow-> 4 lastColumn->2
+[DEBUG] 2017-11-02 20:38:54.992 [main] Game - Trying row: [4] and column: [7]
+[DEBUG] 2017-11-02 20:38:54.992 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:38:54.992 [main] Game - LastRow: 4
+[DEBUG] 2017-11-02 20:38:54.992 [main] Game - Last Column: 7
+[DEBUG] 2017-11-02 20:38:54.992 [main] Game - Validating piece: row-> 8 column-> 2
+lastRow-> 4 lastColumn->2
+[DEBUG] 2017-11-02 20:38:54.992 [main] Game - Validating piece: row-> 4 column-> 8
+lastRow-> 4 lastColumn->2
+[DEBUG] 2017-11-02 20:38:54.993 [main] Game - Trying row: [4] and column: [8]
+[DEBUG] 2017-11-02 20:38:54.993 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:38:54.993 [main] Game - LastRow: 4
+[DEBUG] 2017-11-02 20:38:54.993 [main] Game - Last Column: 8
+[DEBUG] 2017-11-02 20:38:54.993 [main] Game - Validating piece: row-> 9 column-> 2
+lastRow-> 4 lastColumn->2
+[DEBUG] 2017-11-02 20:38:54.993 [main] Game - Validating piece: row-> 4 column-> 9
+lastRow-> 4 lastColumn->2
+[DEBUG] 2017-11-02 20:38:54.993 [main] Game - Best Row: 4 Best Column: 8
+[DEBUG] 2017-11-02 20:38:54.993 [main] Game - Attempting to add piece at: row ->4 column->8
+[DEBUG] 2017-11-02 20:38:54.993 [main] Game - COMPUTER_MOVE
+[DEBUG] 2017-11-02 20:38:54.993 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:38:54.993 [main] Game - LastRow: 4
+[DEBUG] 2017-11-02 20:38:54.993 [main] Game - Last Column: 8
+[DEBUG] 2017-11-02 20:38:54.994 [main] Packet - Writing packet: [B@5f3a4b84
+[DEBUG] 2017-11-02 20:38:54.994 [main] Packet - Byte: 1
+[DEBUG] 2017-11-02 20:38:54.994 [main] Packet - Byte: 4
+[DEBUG] 2017-11-02 20:38:54.994 [main] Packet - Byte: 8
+[DEBUG] 2017-11-02 20:38:54.994 [main] Packet - Byte: 3
+[DEBUG] 2017-11-02 20:38:54.994 [main] Packet - Byte: 1
+[DEBUG] 2017-11-02 20:38:54.994 [main] Game - Game Constructor
+[DEBUG] 2017-11-02 20:38:54.994 [main] Packet - Writing packet: [B@27f723
+[DEBUG] 2017-11-02 20:38:54.995 [main] Packet - Byte: 0
+[DEBUG] 2017-11-02 20:38:54.995 [main] Packet - Byte: 0
+[DEBUG] 2017-11-02 20:38:54.995 [main] Packet - Byte: 0
+[DEBUG] 2017-11-02 20:38:54.995 [main] Packet - Byte: 0
+[DEBUG] 2017-11-02 20:38:54.995 [main] Packet - Byte: 0
+[DEBUG] 2017-11-02 20:38:58.924 [main] Game - Attempting to add piece at: row ->3 column->6
+[DEBUG] 2017-11-02 20:38:58.925 [main] Game - HUMAN_MOVE
+[DEBUG] 2017-11-02 20:38:58.925 [main] Game - Validating piece: row-> 4 column-> 7
+lastRow-> -1 lastColumn->-1
+[DEBUG] 2017-11-02 20:38:58.925 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:38:58.925 [main] Game - LastRow: 4
+[DEBUG] 2017-11-02 20:38:58.925 [main] Game - Last Column: 7
+[DEBUG] 2017-11-02 20:38:58.925 [main] Game - Getting computer move.
+[DEBUG] 2017-11-02 20:38:58.925 [main] Game - Validating piece: row-> 1 column-> 7
+lastRow-> 4 lastColumn->7
+[DEBUG] 2017-11-02 20:38:58.925 [main] Game - Validating piece: row-> 4 column-> 1
+lastRow-> 4 lastColumn->7
+[DEBUG] 2017-11-02 20:38:58.925 [main] Game - Validating piece: row-> 2 column-> 7
+lastRow-> 4 lastColumn->7
+[DEBUG] 2017-11-02 20:38:58.925 [main] Game - Validating piece: row-> 4 column-> 2
+lastRow-> 4 lastColumn->7
+[DEBUG] 2017-11-02 20:38:58.925 [main] Game - Trying row: [4] and column: [2]
+[DEBUG] 2017-11-02 20:38:58.925 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:38:58.925 [main] Game - LastRow: 4
+[DEBUG] 2017-11-02 20:38:58.926 [main] Game - Last Column: 2
+[DEBUG] 2017-11-02 20:38:58.926 [main] Game - Validating piece: row-> 3 column-> 7
+lastRow-> 4 lastColumn->7
+[DEBUG] 2017-11-02 20:38:58.926 [main] Game - Trying row: [3] and column: [7]
+[DEBUG] 2017-11-02 20:38:58.926 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:38:58.926 [main] Game - LastRow: 3
+[DEBUG] 2017-11-02 20:38:58.926 [main] Game - Last Column: 7
+[DEBUG] 2017-11-02 20:38:58.926 [main] Game - Validating piece: row-> 4 column-> 3
+lastRow-> 4 lastColumn->7
+[DEBUG] 2017-11-02 20:38:58.926 [main] Game - Trying row: [4] and column: [3]
+[DEBUG] 2017-11-02 20:38:58.926 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:38:58.926 [main] Game - LastRow: 4
+[DEBUG] 2017-11-02 20:38:58.926 [main] Game - Last Column: 3
+[DEBUG] 2017-11-02 20:38:58.926 [main] Game - Validating piece: row-> 4 column-> 7
+lastRow-> 4 lastColumn->7
+[DEBUG] 2017-11-02 20:38:58.926 [main] Game - Validating piece: row-> 4 column-> 4
+lastRow-> 4 lastColumn->7
+[DEBUG] 2017-11-02 20:38:58.926 [main] Game - Trying row: [4] and column: [4]
+[DEBUG] 2017-11-02 20:38:58.926 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:38:58.926 [main] Game - LastRow: 4
+[DEBUG] 2017-11-02 20:38:58.926 [main] Game - Last Column: 4
+[DEBUG] 2017-11-02 20:38:58.926 [main] Game - Validating piece: row-> 5 column-> 7
+lastRow-> 4 lastColumn->7
+[DEBUG] 2017-11-02 20:38:58.927 [main] Game - Trying row: [5] and column: [7]
+[DEBUG] 2017-11-02 20:38:58.927 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:38:58.927 [main] Game - LastRow: 5
+[DEBUG] 2017-11-02 20:38:58.927 [main] Game - Last Column: 7
+[DEBUG] 2017-11-02 20:38:58.927 [main] Game - Validating piece: row-> 4 column-> 5
+lastRow-> 4 lastColumn->7
+[DEBUG] 2017-11-02 20:38:58.927 [main] Game - Trying row: [4] and column: [5]
+[DEBUG] 2017-11-02 20:38:58.927 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:38:58.927 [main] Game - LastRow: 4
+[DEBUG] 2017-11-02 20:38:58.927 [main] Game - Last Column: 5
+[DEBUG] 2017-11-02 20:38:58.927 [main] Game - Validating piece: row-> 6 column-> 7
+lastRow-> 4 lastColumn->7
+[DEBUG] 2017-11-02 20:38:58.927 [main] Game - Trying row: [6] and column: [7]
+[DEBUG] 2017-11-02 20:38:58.927 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:38:58.927 [main] Game - LastRow: 6
+[DEBUG] 2017-11-02 20:38:58.927 [main] Game - Last Column: 7
+[DEBUG] 2017-11-02 20:38:58.928 [main] Game - Validating piece: row-> 4 column-> 6
+lastRow-> 4 lastColumn->7
+[DEBUG] 2017-11-02 20:38:58.928 [main] Game - Trying row: [4] and column: [6]
+[DEBUG] 2017-11-02 20:38:58.928 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:38:58.928 [main] Game - LastRow: 4
+[DEBUG] 2017-11-02 20:38:58.928 [main] Game - Last Column: 6
+[DEBUG] 2017-11-02 20:38:58.928 [main] Game - Validating piece: row-> 7 column-> 7
+lastRow-> 4 lastColumn->7
+[DEBUG] 2017-11-02 20:38:58.928 [main] Game - Trying row: [7] and column: [7]
+[DEBUG] 2017-11-02 20:38:58.928 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:38:58.928 [main] Game - LastRow: 7
+[DEBUG] 2017-11-02 20:38:58.928 [main] Game - Last Column: 7
+[DEBUG] 2017-11-02 20:38:58.928 [main] Game - Validating piece: row-> 4 column-> 7
+lastRow-> 4 lastColumn->7
+[DEBUG] 2017-11-02 20:38:58.928 [main] Game - Validating piece: row-> 8 column-> 7
+lastRow-> 4 lastColumn->7
+[DEBUG] 2017-11-02 20:38:58.928 [main] Game - Validating piece: row-> 4 column-> 8
+lastRow-> 4 lastColumn->7
+[DEBUG] 2017-11-02 20:38:58.928 [main] Game - Trying row: [4] and column: [8]
+[DEBUG] 2017-11-02 20:38:58.928 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:38:58.928 [main] Game - LastRow: 4
+[DEBUG] 2017-11-02 20:38:58.928 [main] Game - Last Column: 8
+[DEBUG] 2017-11-02 20:38:58.929 [main] Game - Validating piece: row-> 9 column-> 7
+lastRow-> 4 lastColumn->7
+[DEBUG] 2017-11-02 20:38:58.929 [main] Game - Validating piece: row-> 4 column-> 9
+lastRow-> 4 lastColumn->7
+[DEBUG] 2017-11-02 20:38:58.929 [main] Game - Best Row: 4 Best Column: 8
+[DEBUG] 2017-11-02 20:38:58.929 [main] Game - Attempting to add piece at: row ->4 column->8
+[DEBUG] 2017-11-02 20:38:58.929 [main] Game - COMPUTER_MOVE
+[DEBUG] 2017-11-02 20:38:58.929 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:38:58.929 [main] Game - LastRow: 4
+[DEBUG] 2017-11-02 20:38:58.929 [main] Game - Last Column: 8
+[DEBUG] 2017-11-02 20:38:58.929 [main] Packet - Writing packet: [B@670b40af
+[DEBUG] 2017-11-02 20:38:58.929 [main] Packet - Byte: 1
+[DEBUG] 2017-11-02 20:38:58.929 [main] Packet - Byte: 4
+[DEBUG] 2017-11-02 20:38:58.929 [main] Packet - Byte: 8
+[DEBUG] 2017-11-02 20:38:58.929 [main] Packet - Byte: 3
+[DEBUG] 2017-11-02 20:38:58.929 [main] Packet - Byte: 6
+[DEBUG] 2017-11-02 20:38:58.929 [main] Game - Game Constructor
+[DEBUG] 2017-11-02 20:38:58.929 [main] Packet - Writing packet: [B@4923ab24
+[DEBUG] 2017-11-02 20:38:58.930 [main] Packet - Byte: 0
+[DEBUG] 2017-11-02 20:38:58.930 [main] Packet - Byte: 0
+[DEBUG] 2017-11-02 20:38:58.930 [main] Packet - Byte: 0
+[DEBUG] 2017-11-02 20:38:58.930 [main] Packet - Byte: 0
+[DEBUG] 2017-11-02 20:38:58.930 [main] Packet - Byte: 0
+[DEBUG] 2017-11-02 20:39:43.748 [main] Game - Attempting to add piece at: row ->4 column->1
+[DEBUG] 2017-11-02 20:39:43.748 [main] Game - HUMAN_MOVE
+[DEBUG] 2017-11-02 20:39:43.748 [main] Game - Validating piece: row-> 5 column-> 2
+lastRow-> -1 lastColumn->-1
+[DEBUG] 2017-11-02 20:39:43.748 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:39:43.748 [main] Game - LastRow: 5
+[DEBUG] 2017-11-02 20:39:43.748 [main] Game - Last Column: 2
+[DEBUG] 2017-11-02 20:39:43.748 [main] Game - Getting computer move.
+[DEBUG] 2017-11-02 20:39:43.749 [main] Game - Validating piece: row-> 1 column-> 2
+lastRow-> 5 lastColumn->2
+[DEBUG] 2017-11-02 20:39:43.749 [main] Game - Validating piece: row-> 5 column-> 1
+lastRow-> 5 lastColumn->2
+[DEBUG] 2017-11-02 20:39:43.749 [main] Game - Validating piece: row-> 2 column-> 2
+lastRow-> 5 lastColumn->2
+[DEBUG] 2017-11-02 20:39:43.749 [main] Game - Validating piece: row-> 5 column-> 2
+lastRow-> 5 lastColumn->2
+[DEBUG] 2017-11-02 20:39:43.749 [main] Game - Validating piece: row-> 3 column-> 2
+lastRow-> 5 lastColumn->2
+[DEBUG] 2017-11-02 20:39:43.749 [main] Game - Validating piece: row-> 5 column-> 3
+lastRow-> 5 lastColumn->2
+[DEBUG] 2017-11-02 20:39:43.749 [main] Game - Trying row: [5] and column: [3]
+[DEBUG] 2017-11-02 20:39:43.749 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:39:43.749 [main] Game - LastRow: 5
+[DEBUG] 2017-11-02 20:39:43.749 [main] Game - Last Column: 3
+[DEBUG] 2017-11-02 20:39:43.749 [main] Game - Validating piece: row-> 4 column-> 2
+lastRow-> 5 lastColumn->2
+[DEBUG] 2017-11-02 20:39:43.749 [main] Game - Trying row: [4] and column: [2]
+[DEBUG] 2017-11-02 20:39:43.749 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:39:43.749 [main] Game - LastRow: 4
+[DEBUG] 2017-11-02 20:39:43.749 [main] Game - Last Column: 2
+[DEBUG] 2017-11-02 20:39:43.749 [main] Game - Validating piece: row-> 5 column-> 4
+lastRow-> 5 lastColumn->2
+[DEBUG] 2017-11-02 20:39:43.750 [main] Game - Trying row: [5] and column: [4]
+[DEBUG] 2017-11-02 20:39:43.750 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:39:43.750 [main] Game - LastRow: 5
+[DEBUG] 2017-11-02 20:39:43.750 [main] Game - Last Column: 4
+[DEBUG] 2017-11-02 20:39:43.750 [main] Game - Validating piece: row-> 5 column-> 2
+lastRow-> 5 lastColumn->2
+[DEBUG] 2017-11-02 20:39:43.750 [main] Game - Validating piece: row-> 5 column-> 5
+lastRow-> 5 lastColumn->2
+[DEBUG] 2017-11-02 20:39:43.750 [main] Game - Validating piece: row-> 6 column-> 2
+lastRow-> 5 lastColumn->2
+[DEBUG] 2017-11-02 20:39:43.750 [main] Game - Trying row: [6] and column: [2]
+[DEBUG] 2017-11-02 20:39:43.750 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:39:43.750 [main] Game - LastRow: 6
+[DEBUG] 2017-11-02 20:39:43.750 [main] Game - Last Column: 2
+[DEBUG] 2017-11-02 20:39:43.750 [main] Game - Validating piece: row-> 5 column-> 6
+lastRow-> 5 lastColumn->2
+[DEBUG] 2017-11-02 20:39:43.750 [main] Game - Trying row: [5] and column: [6]
+[DEBUG] 2017-11-02 20:39:43.750 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:39:43.750 [main] Game - LastRow: 5
+[DEBUG] 2017-11-02 20:39:43.750 [main] Game - Last Column: 6
+[DEBUG] 2017-11-02 20:39:43.750 [main] Game - Validating piece: row-> 7 column-> 2
+lastRow-> 5 lastColumn->2
+[DEBUG] 2017-11-02 20:39:43.750 [main] Game - Validating piece: row-> 5 column-> 7
+lastRow-> 5 lastColumn->2
+[DEBUG] 2017-11-02 20:39:43.750 [main] Game - Trying row: [5] and column: [7]
+[DEBUG] 2017-11-02 20:39:43.750 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:39:43.750 [main] Game - LastRow: 5
+[DEBUG] 2017-11-02 20:39:43.751 [main] Game - Last Column: 7
+[DEBUG] 2017-11-02 20:39:43.751 [main] Game - Validating piece: row-> 8 column-> 2
+lastRow-> 5 lastColumn->2
+[DEBUG] 2017-11-02 20:39:43.751 [main] Game - Validating piece: row-> 5 column-> 8
+lastRow-> 5 lastColumn->2
+[DEBUG] 2017-11-02 20:39:43.751 [main] Game - Trying row: [5] and column: [8]
+[DEBUG] 2017-11-02 20:39:43.751 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:39:43.751 [main] Game - LastRow: 5
+[DEBUG] 2017-11-02 20:39:43.751 [main] Game - Last Column: 8
+[DEBUG] 2017-11-02 20:39:43.751 [main] Game - Validating piece: row-> 9 column-> 2
+lastRow-> 5 lastColumn->2
+[DEBUG] 2017-11-02 20:39:43.751 [main] Game - Validating piece: row-> 5 column-> 9
+lastRow-> 5 lastColumn->2
+[DEBUG] 2017-11-02 20:39:43.751 [main] Game - Best Row: 5 Best Column: 8
+[DEBUG] 2017-11-02 20:39:43.751 [main] Game - Attempting to add piece at: row ->5 column->8
+[DEBUG] 2017-11-02 20:39:43.751 [main] Game - COMPUTER_MOVE
+[DEBUG] 2017-11-02 20:39:43.751 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:39:43.751 [main] Game - LastRow: 5
+[DEBUG] 2017-11-02 20:39:43.751 [main] Game - Last Column: 8
+[DEBUG] 2017-11-02 20:39:43.751 [main] Packet - Writing packet: [B@44c8afef
+[DEBUG] 2017-11-02 20:39:43.751 [main] Packet - Byte: 1
+[DEBUG] 2017-11-02 20:39:43.751 [main] Packet - Byte: 5
+[DEBUG] 2017-11-02 20:39:43.751 [main] Packet - Byte: 8
+[DEBUG] 2017-11-02 20:39:43.751 [main] Packet - Byte: 4
+[DEBUG] 2017-11-02 20:39:43.751 [main] Packet - Byte: 1
+[DEBUG] 2017-11-02 20:39:43.751 [main] Game - Game Constructor
+[DEBUG] 2017-11-02 20:39:43.752 [main] Packet - Writing packet: [B@7b69c6ba
+[DEBUG] 2017-11-02 20:39:43.752 [main] Packet - Byte: 0
+[DEBUG] 2017-11-02 20:39:43.752 [main] Packet - Byte: 0
+[DEBUG] 2017-11-02 20:39:43.752 [main] Packet - Byte: 0
+[DEBUG] 2017-11-02 20:39:43.752 [main] Packet - Byte: 0
+[DEBUG] 2017-11-02 20:39:43.752 [main] Packet - Byte: 0
+[DEBUG] 2017-11-02 20:40:09.502 [main] Game - Game Constructor
+[DEBUG] 2017-11-02 20:40:18.220 [main] Game - Attempting to add piece at: row ->6 column->2
+[DEBUG] 2017-11-02 20:40:18.220 [main] Game - HUMAN_MOVE
+[DEBUG] 2017-11-02 20:40:18.220 [main] Game - Validating piece: row-> 7 column-> 3
+lastRow-> -1 lastColumn->-1
+[DEBUG] 2017-11-02 20:40:18.220 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:40:18.220 [main] Game - LastRow: 7
+[DEBUG] 2017-11-02 20:40:18.220 [main] Game - Last Column: 3
+[DEBUG] 2017-11-02 20:40:18.220 [main] Game - Getting computer move.
+[DEBUG] 2017-11-02 20:40:18.220 [main] Game - Validating piece: row-> 1 column-> 3
+lastRow-> 7 lastColumn->3
+[DEBUG] 2017-11-02 20:40:18.221 [main] Game - Validating piece: row-> 7 column-> 1
+lastRow-> 7 lastColumn->3
+[DEBUG] 2017-11-02 20:40:18.221 [main] Game - Validating piece: row-> 2 column-> 3
+lastRow-> 7 lastColumn->3
+[DEBUG] 2017-11-02 20:40:18.221 [main] Game - Validating piece: row-> 7 column-> 2
+lastRow-> 7 lastColumn->3
+[DEBUG] 2017-11-02 20:40:18.221 [main] Game - Validating piece: row-> 3 column-> 3
+lastRow-> 7 lastColumn->3
+[DEBUG] 2017-11-02 20:40:18.221 [main] Game - Trying row: [3] and column: [3]
+[DEBUG] 2017-11-02 20:40:18.221 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:40:18.221 [main] Game - LastRow: 3
+[DEBUG] 2017-11-02 20:40:18.221 [main] Game - Last Column: 3
+[DEBUG] 2017-11-02 20:40:18.221 [main] Game - Validating piece: row-> 7 column-> 3
+lastRow-> 7 lastColumn->3
+[DEBUG] 2017-11-02 20:40:18.221 [main] Game - Validating piece: row-> 4 column-> 3
+lastRow-> 7 lastColumn->3
+[DEBUG] 2017-11-02 20:40:18.221 [main] Game - Trying row: [4] and column: [3]
+[DEBUG] 2017-11-02 20:40:18.222 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:40:18.222 [main] Game - LastRow: 4
+[DEBUG] 2017-11-02 20:40:18.222 [main] Game - Last Column: 3
+[DEBUG] 2017-11-02 20:40:18.222 [main] Game - Validating piece: row-> 7 column-> 4
+lastRow-> 7 lastColumn->3
+[DEBUG] 2017-11-02 20:40:18.222 [main] Game - Trying row: [7] and column: [4]
+[DEBUG] 2017-11-02 20:40:18.222 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:40:18.222 [main] Game - LastRow: 7
+[DEBUG] 2017-11-02 20:40:18.222 [main] Game - Last Column: 4
+[DEBUG] 2017-11-02 20:40:18.222 [main] Game - Validating piece: row-> 5 column-> 3
+lastRow-> 7 lastColumn->3
+[DEBUG] 2017-11-02 20:40:18.222 [main] Game - Trying row: [5] and column: [3]
+[DEBUG] 2017-11-02 20:40:18.222 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:40:18.223 [main] Game - LastRow: 5
+[DEBUG] 2017-11-02 20:40:18.223 [main] Game - Last Column: 3
+[DEBUG] 2017-11-02 20:40:18.223 [main] Game - Validating piece: row-> 7 column-> 5
+lastRow-> 7 lastColumn->3
+[DEBUG] 2017-11-02 20:40:18.223 [main] Game - Trying row: [7] and column: [5]
+[DEBUG] 2017-11-02 20:40:18.223 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:40:18.223 [main] Game - LastRow: 7
+[DEBUG] 2017-11-02 20:40:18.223 [main] Game - Last Column: 5
+[DEBUG] 2017-11-02 20:40:18.223 [main] Game - Validating piece: row-> 6 column-> 3
+lastRow-> 7 lastColumn->3
+[DEBUG] 2017-11-02 20:40:18.223 [main] Game - Trying row: [6] and column: [3]
+[DEBUG] 2017-11-02 20:40:18.223 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:40:18.223 [main] Game - LastRow: 6
+[DEBUG] 2017-11-02 20:40:18.223 [main] Game - Last Column: 3
+[DEBUG] 2017-11-02 20:40:18.224 [main] Game - Validating piece: row-> 7 column-> 6
+lastRow-> 7 lastColumn->3
+[DEBUG] 2017-11-02 20:40:18.224 [main] Game - Trying row: [7] and column: [6]
+[DEBUG] 2017-11-02 20:40:18.224 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:40:18.224 [main] Game - LastRow: 7
+[DEBUG] 2017-11-02 20:40:18.224 [main] Game - Last Column: 6
+[DEBUG] 2017-11-02 20:40:18.224 [main] Game - Validating piece: row-> 7 column-> 3
+lastRow-> 7 lastColumn->3
+[DEBUG] 2017-11-02 20:40:18.224 [main] Game - Validating piece: row-> 7 column-> 7
+lastRow-> 7 lastColumn->3
+[DEBUG] 2017-11-02 20:40:18.224 [main] Game - Trying row: [7] and column: [7]
+[DEBUG] 2017-11-02 20:40:18.224 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:40:18.224 [main] Game - LastRow: 7
+[DEBUG] 2017-11-02 20:40:18.224 [main] Game - Last Column: 7
+[DEBUG] 2017-11-02 20:40:18.224 [main] Game - Validating piece: row-> 8 column-> 3
+lastRow-> 7 lastColumn->3
+[DEBUG] 2017-11-02 20:40:18.224 [main] Game - Validating piece: row-> 7 column-> 8
+lastRow-> 7 lastColumn->3
+[DEBUG] 2017-11-02 20:40:18.224 [main] Game - Validating piece: row-> 9 column-> 3
+lastRow-> 7 lastColumn->3
+[DEBUG] 2017-11-02 20:40:18.225 [main] Game - Validating piece: row-> 7 column-> 9
+lastRow-> 7 lastColumn->3
+[DEBUG] 2017-11-02 20:40:18.225 [main] Game - Best Row: 7 Best Column: 7
+[DEBUG] 2017-11-02 20:40:18.225 [main] Game - Attempting to add piece at: row ->7 column->7
+[DEBUG] 2017-11-02 20:40:18.225 [main] Game - COMPUTER_MOVE
+[DEBUG] 2017-11-02 20:40:18.225 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:40:18.225 [main] Game - LastRow: 7
+[DEBUG] 2017-11-02 20:40:18.225 [main] Game - Last Column: 7
+[DEBUG] 2017-11-02 20:40:18.225 [main] Packet - Writing packet: [B@5f3a4b84
+[DEBUG] 2017-11-02 20:40:18.225 [main] Packet - Byte: 1
+[DEBUG] 2017-11-02 20:40:18.225 [main] Packet - Byte: 7
+[DEBUG] 2017-11-02 20:40:18.225 [main] Packet - Byte: 7
+[DEBUG] 2017-11-02 20:40:18.225 [main] Packet - Byte: 6
+[DEBUG] 2017-11-02 20:40:18.226 [main] Packet - Byte: 2
+[DEBUG] 2017-11-02 20:40:18.226 [main] Game - Game Constructor
+[DEBUG] 2017-11-02 20:40:18.226 [main] Packet - Writing packet: [B@27f723
+[DEBUG] 2017-11-02 20:40:18.226 [main] Packet - Byte: 0
+[DEBUG] 2017-11-02 20:40:18.226 [main] Packet - Byte: 0
+[DEBUG] 2017-11-02 20:40:18.226 [main] Packet - Byte: 0
+[DEBUG] 2017-11-02 20:40:18.226 [main] Packet - Byte: 0
+[DEBUG] 2017-11-02 20:40:18.226 [main] Packet - Byte: 0
+[DEBUG] 2017-11-02 20:40:21.833 [main] Game - Attempting to add piece at: row ->6 column->3
+[DEBUG] 2017-11-02 20:40:21.833 [main] Game - HUMAN_MOVE
+[DEBUG] 2017-11-02 20:40:21.833 [main] Game - Validating piece: row-> 7 column-> 4
+lastRow-> -1 lastColumn->-1
+[DEBUG] 2017-11-02 20:40:21.833 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:40:21.834 [main] Game - LastRow: 7
+[DEBUG] 2017-11-02 20:40:21.834 [main] Game - Last Column: 4
+[DEBUG] 2017-11-02 20:40:21.834 [main] Game - Getting computer move.
+[DEBUG] 2017-11-02 20:40:21.834 [main] Game - Validating piece: row-> 1 column-> 4
+lastRow-> 7 lastColumn->4
+[DEBUG] 2017-11-02 20:40:21.834 [main] Game - Validating piece: row-> 7 column-> 1
+lastRow-> 7 lastColumn->4
+[DEBUG] 2017-11-02 20:40:21.834 [main] Game - Validating piece: row-> 2 column-> 4
+lastRow-> 7 lastColumn->4
+[DEBUG] 2017-11-02 20:40:21.834 [main] Game - Trying row: [2] and column: [4]
+[DEBUG] 2017-11-02 20:40:21.834 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:40:21.834 [main] Game - LastRow: 2
+[DEBUG] 2017-11-02 20:40:21.834 [main] Game - Last Column: 4
+[DEBUG] 2017-11-02 20:40:21.834 [main] Game - Validating piece: row-> 7 column-> 2
+lastRow-> 7 lastColumn->4
+[DEBUG] 2017-11-02 20:40:21.834 [main] Game - Validating piece: row-> 3 column-> 4
+lastRow-> 7 lastColumn->4
+[DEBUG] 2017-11-02 20:40:21.835 [main] Game - Trying row: [3] and column: [4]
+[DEBUG] 2017-11-02 20:40:21.835 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:40:21.835 [main] Game - LastRow: 3
+[DEBUG] 2017-11-02 20:40:21.835 [main] Game - Last Column: 4
+[DEBUG] 2017-11-02 20:40:21.835 [main] Game - Validating piece: row-> 7 column-> 3
+lastRow-> 7 lastColumn->4
+[DEBUG] 2017-11-02 20:40:21.835 [main] Game - Trying row: [7] and column: [3]
+[DEBUG] 2017-11-02 20:40:21.835 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:40:21.835 [main] Game - LastRow: 7
+[DEBUG] 2017-11-02 20:40:21.835 [main] Game - Last Column: 3
+[DEBUG] 2017-11-02 20:40:21.835 [main] Game - Validating piece: row-> 4 column-> 4
+lastRow-> 7 lastColumn->4
+[DEBUG] 2017-11-02 20:40:21.835 [main] Game - Trying row: [4] and column: [4]
+[DEBUG] 2017-11-02 20:40:21.835 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:40:21.835 [main] Game - LastRow: 4
+[DEBUG] 2017-11-02 20:40:21.835 [main] Game - Last Column: 4
+[DEBUG] 2017-11-02 20:40:21.835 [main] Game - Validating piece: row-> 7 column-> 4
+lastRow-> 7 lastColumn->4
+[DEBUG] 2017-11-02 20:40:21.835 [main] Game - Validating piece: row-> 5 column-> 4
+lastRow-> 7 lastColumn->4
+[DEBUG] 2017-11-02 20:40:21.835 [main] Game - Trying row: [5] and column: [4]
+[DEBUG] 2017-11-02 20:40:21.835 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:40:21.835 [main] Game - LastRow: 5
+[DEBUG] 2017-11-02 20:40:21.835 [main] Game - Last Column: 4
+[DEBUG] 2017-11-02 20:40:21.836 [main] Game - Validating piece: row-> 7 column-> 5
+lastRow-> 7 lastColumn->4
+[DEBUG] 2017-11-02 20:40:21.836 [main] Game - Trying row: [7] and column: [5]
+[DEBUG] 2017-11-02 20:40:21.836 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:40:21.836 [main] Game - LastRow: 7
+[DEBUG] 2017-11-02 20:40:21.836 [main] Game - Last Column: 5
+[DEBUG] 2017-11-02 20:40:21.836 [main] Game - Validating piece: row-> 6 column-> 4
+lastRow-> 7 lastColumn->4
+[DEBUG] 2017-11-02 20:40:21.836 [main] Game - Trying row: [6] and column: [4]
+[DEBUG] 2017-11-02 20:40:21.836 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:40:21.836 [main] Game - LastRow: 6
+[DEBUG] 2017-11-02 20:40:21.836 [main] Game - Last Column: 4
+[DEBUG] 2017-11-02 20:40:21.836 [main] Game - Validating piece: row-> 7 column-> 6
+lastRow-> 7 lastColumn->4
+[DEBUG] 2017-11-02 20:40:21.836 [main] Game - Trying row: [7] and column: [6]
+[DEBUG] 2017-11-02 20:40:21.836 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:40:21.836 [main] Game - LastRow: 7
+[DEBUG] 2017-11-02 20:40:21.836 [main] Game - Last Column: 6
+[DEBUG] 2017-11-02 20:40:21.836 [main] Game - Validating piece: row-> 7 column-> 4
+lastRow-> 7 lastColumn->4
+[DEBUG] 2017-11-02 20:40:21.837 [main] Game - Validating piece: row-> 7 column-> 7
+lastRow-> 7 lastColumn->4
+[DEBUG] 2017-11-02 20:40:21.837 [main] Game - Trying row: [7] and column: [7]
+[DEBUG] 2017-11-02 20:40:21.837 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:40:21.837 [main] Game - LastRow: 7
+[DEBUG] 2017-11-02 20:40:21.837 [main] Game - Last Column: 7
+[DEBUG] 2017-11-02 20:40:21.837 [main] Game - Validating piece: row-> 8 column-> 4
+lastRow-> 7 lastColumn->4
+[DEBUG] 2017-11-02 20:40:21.837 [main] Game - Trying row: [8] and column: [4]
+[DEBUG] 2017-11-02 20:40:21.837 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:40:21.837 [main] Game - LastRow: 8
+[DEBUG] 2017-11-02 20:40:21.837 [main] Game - Last Column: 4
+[DEBUG] 2017-11-02 20:40:21.837 [main] Game - Validating piece: row-> 7 column-> 8
+lastRow-> 7 lastColumn->4
+[DEBUG] 2017-11-02 20:40:21.837 [main] Game - Validating piece: row-> 9 column-> 4
+lastRow-> 7 lastColumn->4
+[DEBUG] 2017-11-02 20:40:21.837 [main] Game - Validating piece: row-> 7 column-> 9
+lastRow-> 7 lastColumn->4
+[DEBUG] 2017-11-02 20:40:21.837 [main] Game - Best Row: 8 Best Column: 4
+[DEBUG] 2017-11-02 20:40:21.837 [main] Game - Attempting to add piece at: row ->8 column->4
+[DEBUG] 2017-11-02 20:40:21.837 [main] Game - COMPUTER_MOVE
+[DEBUG] 2017-11-02 20:40:21.837 [main] Game - Calculating points...
+[DEBUG] 2017-11-02 20:40:21.837 [main] Game - LastRow: 8
+[DEBUG] 2017-11-02 20:40:21.837 [main] Game - Last Column: 4
+[DEBUG] 2017-11-02 20:40:21.837 [main] Packet - Writing packet: [B@670b40af
+[DEBUG] 2017-11-02 20:40:21.838 [main] Packet - Byte: 1
+[DEBUG] 2017-11-02 20:40:21.838 [main] Packet - Byte: 8
+[DEBUG] 2017-11-02 20:40:21.838 [main] Packet - Byte: 4
+[DEBUG] 2017-11-02 20:40:21.838 [main] Packet - Byte: 6
+[DEBUG] 2017-11-02 20:40:21.838 [main] Packet - Byte: 3
+[DEBUG] 2017-11-02 20:40:21.838 [main] Game - Game Constructor
+[DEBUG] 2017-11-02 20:40:21.838 [main] Packet - Writing packet: [B@4923ab24
+[DEBUG] 2017-11-02 20:40:21.838 [main] Packet - Byte: 0
+[DEBUG] 2017-11-02 20:40:21.838 [main] Packet - Byte: 0
+[DEBUG] 2017-11-02 20:40:21.838 [main] Packet - Byte: 0
+[DEBUG] 2017-11-02 20:40:21.838 [main] Packet - Byte: 0
+[DEBUG] 2017-11-02 20:40:21.838 [main] Packet - Byte: 0
