@@ -18,6 +18,9 @@ public class Board {
     private final org.slf4j.Logger log = LoggerFactory.getLogger(this.getClass().getName());
     private Scanner keyBoard = new Scanner(System.in);
     private String[][] gameBoard = new String[7][7];
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_BLACK = "\u001B[30m";
+    public static final String ANSI_RED = "\u001B[31m";
     private int lastRow = 0, lastCol = 0;
     private String lastMove = "X";
 
@@ -120,8 +123,8 @@ public class Board {
         if(cellState == Slot.HUMAN_MOVE)
             move = "W";
 
-        gameBoard[lastRow][lastCol] = lastMove;
-        gameBoard[row][col] = move;
+        gameBoard[lastRow][lastCol] = ANSI_BLACK + lastMove + ANSI_RESET;
+        gameBoard[row][col] = ANSI_RED + move + ANSI_RESET;
 
         lastMove = move;
         lastRow = row;
