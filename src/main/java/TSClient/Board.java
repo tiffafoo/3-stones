@@ -1,7 +1,6 @@
 package TSClient;
 
 import TSServer.game.Slot;
-import java.lang.reflect.Array;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import org.slf4j.LoggerFactory;

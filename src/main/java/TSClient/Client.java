@@ -9,7 +9,14 @@ import java.net.Socket;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-// Given by teacher
+/**
+ * Connects the server and the UI together.
+ * Start this and the server to see the game running.
+ *
+ * @author Tiffany Le-Nguyen
+ * @author Trevor Eames
+ * @author Alessandro Ciotola
+ */
 public class Client {
 
     //Commented out to test the playSession

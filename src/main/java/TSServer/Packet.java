@@ -9,10 +9,13 @@ import java.net.Socket;
 
 /**
  * Handles reading and writing packets
+ *
+ * @author Tiffany Le-Nguyen
+ * @author Trevor Eames
+ * @author Alessandro Ciotola
  */
 public class Packet {
     private final org.slf4j.Logger log = LoggerFactory.getLogger(this.getClass().getName());
-    // TODO: Replace 32 with actual bufsize
     public static final int BUFSIZE = 8;
 
     /**

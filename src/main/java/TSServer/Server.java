@@ -7,7 +7,14 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-// Given by teacher
+/**
+ * Accepts new connections from the client, and handles the packets received
+ * and the server responses.
+ *
+ * @author Tiffany Le-Nguyen
+ * @author Trevor Eames
+ * @author Alessandro Ciotola
+ */
 public class Server
 {
 
