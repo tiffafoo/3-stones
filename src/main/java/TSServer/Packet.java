@@ -13,7 +13,7 @@ import java.net.Socket;
 public class Packet {
     private final org.slf4j.Logger log = LoggerFactory.getLogger(this.getClass().getName());
     // TODO: Replace 32 with actual bufsize
-    public static final int BUFSIZE = 5;
+    public static final int BUFSIZE = 6;
 
     /**
      * Reads bytes from stream
@@ -47,13 +47,6 @@ public class Packet {
                     + " instead of [" + BUFSIZE +"]" );
         }
 
-        log.debug("Writing packet: " + bytes);
-
-        for (byte b:
-             bytes) {
-            log.debug("Byte: " + b);
-        }
-        // Write bytes
         OutputStream out = socket.getOutputStream();
         out.write(bytes);
     }
