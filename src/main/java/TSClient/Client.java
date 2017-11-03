@@ -2,7 +2,7 @@ package TSClient;
 
 import TSServer.Packet;
 import TSServer.game.Slot;
-import com.oracle.tools.packager.Log;
+//import com.oracle.tools.packager.Log;
 
 import java.io.IOException;
 import java.net.Socket;
@@ -52,7 +52,7 @@ public class Client {
                 switch (input[0]) {
                     //Error received
                     case -1:
-                        Log.debug("ERROR");
+                        //Log.debug("ERROR");
                         keepPlaying = false;
                         break;
                     //New game starts here
@@ -93,7 +93,7 @@ public class Client {
                         break;
                     //End game
                     case 2:
-                        Log.debug("End Game");
+                        //Log.debug("End Game");
                         board.endGame(input[1], input[2]);
                         byte playAgain = board.playSession();
                         if (playAgain == 1) {
