@@ -9,7 +9,14 @@ import java.net.Socket;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-// Given by teacher
+/**
+ * Connects the server and the UI together.
+ * Start this and the server to see the game running.
+ *
+ * @author Tiffany Le-Nguyen
+ * @author Trevor Eames
+ * @author Alessandro Ciotola
+ */
 public class Client {
 
     //Commented out to test the playSession
@@ -21,7 +28,7 @@ public class Client {
         Boolean keepPlaying = true;
         Boolean started = true;
         byte[] input = new byte[0];
-        byte[] firstPlay = new byte[6];
+        byte[] firstPlay = new byte[8];
         firstPlay[0] = 0;
         //Regex pattern for validating ip addrss
         final Pattern PATTERN = Pattern.compile(
@@ -47,7 +54,7 @@ public class Client {
             started = false;
 
             byte[] playerMove;
-            byte[] response = new byte[6];
+            byte[] response = new byte[8];
 
                 switch (input[0]) {
                     //Error received
@@ -65,6 +72,8 @@ public class Client {
                         response[3] = 0;
                         response[4] = 0;
                         response[5] = 0;
+                        response[6] = 0;
+                        response[7] = 0;
                         packet.write(response, socket);
                         break;
                     //Valid move was played and new piece played
@@ -79,6 +88,8 @@ public class Client {
                             board.changeBoardPiece(input[1] - 2, input[2] - 2, Slot.COMPUTER_MOVE);
                             System.out.println("-------------------------");
                             System.out.println("Black played: (" +(input[1] - 1) +", " + (input[2] - 1) + ")");
+                            System.out.println("Scores:\nPlayer Score: " + input[6] + " | "
+                + "Computer Score: " + input[7]);
                             System.out.println("White to play");
                         }
                         board.showClientBoard();
@@ -89,6 +100,8 @@ public class Client {
                         response[3] = 0;
                         response[4] = 0;
                         response[5] = 0;
+                        response[6] = 0;
+                        response[7] = 0;
                         packet.write(response, socket);
                         break;
                     //End game
@@ -97,11 +110,14 @@ public class Client {
                         board.endGame(input[1], input[2]);
                         byte playAgain = board.playSession();
                         if (playAgain == 1) {
-                            response[0] = 1;
+                            response[0] = 0;
+                            response[1] = 0;
                             response[2] = 0;
                             response[3] = 0;
                             response[4] = 0;
                             response[5] = 0;
+                            response[6] = 0;
+                            response[7] = 0;
 
                         }
                         else
@@ -111,19 +127,22 @@ public class Client {
                         response[3] = 0;
                         response[4] = 0;
                         response[5] = 0;
+                        response[6] = 0;
+                        response[7] = 0;
                         packet.write(response, socket);
                         break;
                     //Restart the game and play first move
                     case 3:
-                        board = new Board();
-                        board.startGame();
+                    	board = new Board();
                         response[0] = 1;
-                        playerMove = board.getPlayerMove();
+                        playerMove = board.startGame();
                         response[1] = playerMove[0];
                         response[2] = playerMove[1];
                         response[3] = 0;
                         response[4] = 0;
                         response[5] = 0;
+                        response[6] = 0;
+                        response[7] = 0;
                         packet.write(response, socket);
                         break;
                     //Player invoked exit
