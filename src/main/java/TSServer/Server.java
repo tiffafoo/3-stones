@@ -36,7 +36,7 @@ public class Server
             // Receive until client closes connection, indicated by -1 return
             while (keepPlaying) {
                 byte[] input = packet.read(clntSock);
-                byte[] response = new byte[6];
+                byte[] response = new byte[8];
 
                 if(!(input.length == 0)){
                     switch (input[0]) {
@@ -49,6 +49,8 @@ public class Server
                             response[3] = 0;
                             response[4] = 0;
                             response[5] = 1;
+                            response[6] = 0;
+                            response[7] = 0;
                             packet.write(response, clntSock);
                             break;
                         //Validate player move. If good, play it, else respond with invalid see 2nd else
@@ -62,6 +64,8 @@ public class Server
                                     response[3] = 0;
                                     response[4] = 0;
                                     response[5] = 1;
+                                    response[6] = 0;
+                                    response[7] = 0;
                                 }
                                 else {
                                     response[0] = 1;
@@ -71,6 +75,8 @@ public class Server
                                     response[3] = input[1];
                                     response[4] = input[2];
                                     response[5] = 1;
+                                    response[6] = game.getPlayerPoints();
+                                    response[7] = game.getCompPoints();
                                 }
                                 packet.write(response, clntSock);
                                 break;
@@ -82,6 +88,8 @@ public class Server
                             response[3] = 0;
                             response[4] = 0;
                             response[5] = 4;
+                            response[6] = 0;
+                            response[7] = 0;
                             packet.write(response, clntSock);
                         }
                             break;
@@ -92,6 +100,8 @@ public class Server
                             response[3] = 0;
                             response[4] = 0;
                             response[5] = 1;
+                            response[6] = 0;
+                            response[7] = 0;
                             packet.write(response, clntSock);
                             break;
                         //Player wants to end game
@@ -102,6 +112,8 @@ public class Server
                             response[3] = 0;
                             response[4] = 0;
                             response[5] = 1;
+                            response[6] = 0;
+                            response[7] = 0;
                             keepPlaying = false;
                             packet.write(response, clntSock);
                             break;

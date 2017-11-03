@@ -21,7 +21,7 @@ public class Client {
         Boolean keepPlaying = true;
         Boolean started = true;
         byte[] input = new byte[0];
-        byte[] firstPlay = new byte[6];
+        byte[] firstPlay = new byte[8];
         firstPlay[0] = 0;
         //Regex pattern for validating ip addrss
         final Pattern PATTERN = Pattern.compile(
@@ -47,7 +47,7 @@ public class Client {
             started = false;
 
             byte[] playerMove;
-            byte[] response = new byte[6];
+            byte[] response = new byte[8];
 
                 switch (input[0]) {
                     //Error received
@@ -65,6 +65,8 @@ public class Client {
                         response[3] = 0;
                         response[4] = 0;
                         response[5] = 0;
+                        response[6] = 0;
+                        response[7] = 0;
                         packet.write(response, socket);
                         break;
                     //Valid move was played and new piece played
@@ -79,6 +81,8 @@ public class Client {
                             board.changeBoardPiece(input[1] - 2, input[2] - 2, Slot.COMPUTER_MOVE);
                             System.out.println("-------------------------");
                             System.out.println("Black played: (" +(input[1] - 1) +", " + (input[2] - 1) + ")");
+                            System.out.println("Scores:\nPlayer Score: " + input[6] + " | "
+                + "Computer Score: " + input[7]);
                             System.out.println("White to play");
                         }
                         board.showClientBoard();
@@ -89,6 +93,8 @@ public class Client {
                         response[3] = 0;
                         response[4] = 0;
                         response[5] = 0;
+                        response[6] = 0;
+                        response[7] = 0;
                         packet.write(response, socket);
                         break;
                     //End game
@@ -102,6 +108,8 @@ public class Client {
                             response[3] = 0;
                             response[4] = 0;
                             response[5] = 0;
+                            response[6] = 0;
+                            response[7] = 0;
 
                         }
                         else
@@ -111,6 +119,8 @@ public class Client {
                         response[3] = 0;
                         response[4] = 0;
                         response[5] = 0;
+                        response[6] = 0;
+                        response[7] = 0;
                         packet.write(response, socket);
                         break;
                     //Restart the game and play first move
@@ -124,6 +134,8 @@ public class Client {
                         response[3] = 0;
                         response[4] = 0;
                         response[5] = 0;
+                        response[6] = 0;
+                        response[7] = 0;
                         packet.write(response, socket);
                         break;
                     //Player invoked exit
