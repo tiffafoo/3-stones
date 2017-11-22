@@ -133,7 +133,7 @@ public class Client {
                         response[6] = 0;
                         response[7] = 0;
                     }
-                    
+
                     packet.write(response, socket);
                     break;
                 //Restart the game and play first move

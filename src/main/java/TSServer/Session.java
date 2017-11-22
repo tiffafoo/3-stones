@@ -18,10 +18,8 @@ public class Session {
     private boolean playAgain = true;
     private Packet packet = new Packet();
 
-    public void playSession(Socket clntSock) throws IOException 
-    {
-        while (playAgain) 
-        {
+    public void playSession(Socket clntSock) throws IOException {
+        while (playAgain) {
             byte[] response = new byte[8];
             byte[] input = packet.read(clntSock);
             if (started) {
